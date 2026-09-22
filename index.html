@@ -4,90 +4,164 @@
 <meta charset="UTF-8">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mira｜2027 美本选校地图</title>
+<title>Mira｜2027 美本选校工作台</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <style>
-:root{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:#25342f;background:#f5f6f5;font-synthesis:none}*{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}button{cursor:pointer}header{background:#fff;padding:28px 36px 22px;border-bottom:1px solid #e1e6e3}.heading{display:flex;justify-content:space-between;align-items:center;gap:24px}h1{font-size:26px;letter-spacing:-.7px;margin:0 0 8px;font-weight:650}.subtitle{margin:0;color:#76817b;font-size:13px}.stats{display:flex;gap:30px;flex-shrink:0}.stat{display:flex;flex-direction:column;gap:5px}.stat strong{font-size:23px;font-weight:600}.stat span{font-size:11px;color:#79837f;letter-spacing:.6px}.question{margin:22px 0 0;padding-left:13px;border-left:3px solid #739389;color:#52635b;font-size:14px;line-height:1.7}main{display:grid;grid-template-columns:30% 70%;height:calc(100dvh - 179px);min-height:520px;padding:20px 24px 24px;gap:0}.sidebar{background:white;border:1px solid #dde4df;border-radius:12px 0 0 12px;min-width:0;display:flex;flex-direction:column;overflow:hidden}.controls{padding:20px 18px 14px;border-bottom:1px solid #e7ebe8}.section-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}h2{margin:0;font-size:15px;font-weight:600}.reset{background:none;border:0;color:#40685a;font-size:12px;padding:5px 0 5px 12px}.reset:hover{text-decoration:underline}input,select{width:100%;border:1px solid #dce3de;border-radius:6px;background:#fafbf9;color:#34463d;min-height:39px;font-size:13px;padding:9px 11px}input{margin-bottom:9px}input::placeholder{color:#8b958f}input:focus,select:focus,button:focus-visible{outline:2px solid #527c6c;outline-offset:2px}.count{font-size:11px;color:#818b84;margin:13px 0 0}.school-list{overflow:auto;flex:1;padding:6px 8px 12px;scrollbar-width:thin}.school{display:block;position:relative;text-align:left;background:#fff;border:1px solid transparent;width:100%;border-radius:7px;padding:13px 10px 13px 29px;color:#263a30;margin:2px 0}.school:hover{background:#f5f7f5}.school.selected{background:#edf3ef;border-color:#cfddd4}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;flex-shrink:0}.school>.dot{position:absolute;left:11px;top:19px}.school strong{display:block;font-size:14px;font-weight:600;line-height:1.5}.school .english{display:block;font-size:12px;line-height:1.5;margin-top:3px;color:#596c61;overflow-wrap:anywhere}.school .place{display:block;font-size:11px;color:#8a948e;margin-top:4px}.empty{padding:25px 14px;font-size:13px;color:#758077;line-height:1.8}.map-panel{position:relative;min-width:0;display:flex;flex-direction:column;border:1px solid #dde4df;border-left:0;border-radius:0 12px 12px 0;overflow:hidden;background:#f0f3ef}.map-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;background:#fff;padding:15px 20px;border-bottom:1px solid #e4e9e5}.map-heading span{font-size:11px;color:#8a938d}#map{flex:1;min-height:300px;background:#e9eeea}.legend{display:flex;flex-wrap:wrap;gap:10px 20px;padding:12px 18px;background:white;border-top:1px solid #e3e8e4}.legend-item{display:flex;align-items:center;gap:7px;font-size:11px;color:#66766c;line-height:1.5}.pin-wrap{background:none;border:0}.pin{width:26px;height:26px;border:2px solid white;border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 2px 5px #203a3a40;display:flex;align-items:center;justify-content:center}.pin span{transform:rotate(45deg);color:#fff;font-size:10px;font-weight:700}.leaflet-popup-content{font-family:inherit;line-height:1.6;margin:17px 20px;min-width:180px}.popup-cn{font-size:16px;font-weight:650;margin-bottom:4px}.popup-en{font-size:12px;color:#4d6257}.popup-place{font-size:12px;color:#7b877f;margin:7px 0 11px}.popup-type{font-size:12px;border-top:1px solid #e6eae7;padding-top:10px}.popup-type small{display:block;color:#7b877f;font-size:10px;margin-top:3px}.map-error{padding:30px;color:#53675c;font-size:14px;line-height:1.8}.leaflet-control-attribution{font-size:10px!important}
-@media(min-width:1500px){main{grid-template-columns:27% 73%}header{padding-left:44px;padding-right:44px}}
-@media(max-width:850px){header{padding:22px 20px}.heading{align-items:flex-start;gap:18px;flex-direction:column}.stats{gap:28px}.stat{flex-direction:row;align-items:baseline;gap:7px}.stat strong{font-size:19px}.question{margin-top:17px;font-size:13px}main{height:auto;min-height:0;grid-template-columns:minmax(0,1fr);padding:14px;gap:14px}.sidebar{border-radius:10px;max-height:390px}.controls{padding:15px}.school-list{min-height:140px}.map-panel{border:1px solid #dde4df;border-radius:10px;height:530px}#map{min-height:320px}.legend{gap:8px 15px;padding:12px}.map-heading{padding:13px 15px}h1{font-size:23px}.map-heading span{font-size:10px}}
+:root{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI",Arial,sans-serif;color:#27272b;background:#fff;font-synthesis:none}*{box-sizing:border-box}body{margin:0;height:100dvh;display:flex;flex-direction:column}button,input,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid #748b83;outline-offset:3px}button{color:inherit}header{flex:none;padding:20px 28px 15px;border-bottom:1px solid #ededf0}.heading{display:flex;align-items:center;justify-content:space-between;gap:20px}h1{font-size:19px;letter-spacing:-.5px;font-weight:600;margin:0}h1 span{font-weight:400;color:#66666d;font-size:16px;margin-left:10px}.subtitle{font-size:11px;color:#8a8a91;margin:6px 0 0}.question{font-size:12px;line-height:1.7;color:#96969c;margin:12px 0 0}.reset{border:0;background:#f5f5f7;border-radius:20px;padding:9px 15px;font-size:12px}.reset:hover{background:#eeeef1}main{display:grid;grid-template-columns:minmax(0,24fr) minmax(0,50fr) minmax(0,26fr);flex:1;min-height:0;padding:18px 0}.sidebar{min-width:0;min-height:0;display:flex;flex-direction:column;padding:0 18px}.controls{padding:0 3px 10px}input,textarea{width:100%;min-width:0;background:#f5f5f7;border:1px solid transparent;border-radius:12px;padding:12px;color:#303035;font-size:12px}input::placeholder,textarea::placeholder{color:#94949a}input:focus,textarea:focus{background:#fff;border-color:#d7d7dd}.segments{display:flex;background:#f2f2f4;border-radius:12px;padding:3px;gap:2px;margin-top:10px}.segments button{flex:1;min-width:0;border:0;background:transparent;border-radius:9px;padding:9px 2px;font-size:11px;color:#808087}.segments button[aria-pressed="true"]{background:#fff;color:#29292e}.count{font-size:10px;color:#96969c;margin:14px 0 0;letter-spacing:.3px}.school-list{overflow:auto;flex:1;min-height:0;scrollbar-width:thin}.school{display:block;width:100%;position:relative;text-align:left;border:0;border-bottom:1px solid #f0f0f2;border-radius:0;background:#fff;padding:16px 10px 16px 22px}.school:hover{background:#f8f8f9}.school.selected{background:#f0f0f3;border-radius:10px;border-bottom-color:transparent}.school.selected:before{content:"";position:absolute;left:0;top:20px;bottom:20px;width:2px;background:var(--type-color);border-radius:2px}.dot{display:inline-block;width:7px;height:7px;border-radius:50%;flex-shrink:0}.school>.dot{position:absolute;left:8px;top:23px}.school strong{display:block;font-size:13px;font-weight:550;line-height:1.65}.school .english{display:block;font-size:11px;line-height:1.55;color:#818188;margin-top:3px;overflow-wrap:anywhere}.school .place{display:block;font-size:10px;color:#a0a0a6;margin-top:5px;line-height:1.5}.empty{font-size:12px;color:#89898f;line-height:1.8;padding:20px 8px}.map-panel{min-width:0;min-height:0;display:flex;flex-direction:column}#map{flex:1;min-height:240px;border-radius:16px;background:#f0f1ef;isolation:isolate}.legend{display:flex;flex-wrap:wrap;gap:8px 16px;padding:13px 5px 0}.legend-item{display:flex;align-items:center;gap:6px;font-size:10px;color:#85858c;line-height:1.6}.pin-wrap{background:none;border:0}.pin{width:26px;height:26px;border:2px solid white;border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 1px 3px #0002;display:flex;align-items:center;justify-content:center}.pin span{transform:rotate(45deg);color:#fff;font-size:10px;font-weight:600}.leaflet-popup-content{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;line-height:1.6;margin:16px 18px;min-width:170px}.popup-cn{font-size:15px;font-weight:600;margin-bottom:4px}.popup-en{font-size:11px;color:#797980}.popup-place{font-size:11px;color:#919198;margin:6px 0 10px}.popup-type{font-size:11px;border-top:1px solid #eeeef0;padding-top:9px}.popup-type small{display:block;color:#96969b;font-size:10px;margin-top:3px}.leaflet-popup-content-wrapper{border-radius:12px;box-shadow:0 2px 12px #00000012}.leaflet-control-attribution{font-size:10px!important}.map-error{padding:25px;color:#85858c;font-size:13px;line-height:1.8}.details{min-width:0;overflow:auto;padding:12px 25px 24px;scrollbar-width:thin}.detail-empty{padding-top:65px}.detail-empty h2{font-size:17px;font-weight:500}.detail-empty p{font-size:12px;color:#96969c;line-height:1.9}.detail-name{font-size:23px;font-weight:600;letter-spacing:-.5px;line-height:1.5;margin:5px 0 6px;overflow-wrap:anywhere}.detail-en{font-size:13px;line-height:1.6;color:#7b7b83;margin:0;overflow-wrap:anywhere}.detail-place{font-size:11px;line-height:1.6;color:#a0a0a7;margin:12px 0 18px}.type-label{display:inline-flex;align-items:center;gap:7px;font-size:11px;line-height:1.6}.type-en{font-size:10px;color:#a0a0a7;line-height:1.6;margin:5px 0 22px}.research-block{padding:20px 0;border-top:1px solid #eeeef1}.research-block h3{font-size:12px;font-weight:550;line-height:1.7;margin:0}.research-block h3 span{font-size:10px;font-weight:400;color:#b0b0b6;margin-right:10px;font-variant-numeric:tabular-nums}.research-block p{font-size:12px;line-height:1.9;color:#66666e;margin:10px 0 0;white-space:pre-wrap;overflow-wrap:anywhere}.research-block p.placeholder{color:#b0b0b6}.judgment{border-top:1px solid #eeeef1;padding-top:22px;margin-top:8px}.judgment h3{font-size:12px;font-weight:550;margin:0}.choice-segments button{font-size:10px;line-height:1.6;padding:9px 4px}.note-label{display:block;font-size:11px;color:#82828a;margin:22px 0 9px}textarea{resize:vertical;min-height:74px;line-height:1.7}.save-status{min-height:16px;font-size:10px;color:#a0a0a7;margin:7px 0 0}.sheet-close,.backdrop{display:none}[hidden]{display:none!important}
+@media(min-width:1600px){header{padding-left:36px;padding-right:36px}.sidebar{padding:0 26px}.details{padding-left:32px;padding-right:32px}}
+@media(max-width:900px){body{height:auto;min-height:100dvh}header{padding:18px 18px 13px}h1{font-size:18px}h1 span{font-size:14px;margin-left:6px}.heading{gap:8px}.question{font-size:11px;margin-top:10px}.reset{font-size:11px;padding:8px 11px;flex-shrink:0}main{display:flex;flex-direction:column;padding:14px;gap:22px;overflow:visible}.map-panel{order:0;height:47dvh;min-height:330px;flex:none}.sidebar{order:1;padding:0;min-height:350px}.controls{padding:0 0 12px}.school-list{max-height:60dvh;min-height:180px;overflow:auto}.school{padding-top:17px;padding-bottom:17px}.legend{gap:5px 12px;padding-top:10px}.legend-item{font-size:9px}.details{display:none;position:fixed;inset:auto 0 0;max-height:82dvh;border-radius:20px 20px 0 0;padding:20px 24px max(28px,env(safe-area-inset-bottom));background:#fff;z-index:2001;overscroll-behavior:contain}.details.open{display:block}.detail-name{padding-right:42px;font-size:23px}.sheet-close{display:block;position:absolute;right:18px;top:17px;width:34px;height:34px;border:0;background:#f3f3f5;border-radius:50%;font-size:22px;line-height:1}.backdrop.open{display:block;position:fixed;inset:0;background:#0003;z-index:2000}body.sheet-open{overflow:hidden}.research-block{padding:17px 0}.choice-segments button{font-size:11px;padding:10px 4px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
-<header><div class="heading"><div><h1>Mira｜2027 美本选校地图</h1><p class="subtitle" id="subtitle"></p></div><div class="stats" aria-label="学校池统计"><div class="stat"><strong id="school-total"></strong><span>Schools</span></div><div class="stat"><strong id="state-total"></strong><span id="state-label"></span></div><div class="stat"><strong id="type-total"></strong><span>School Types</span></div></div></div><p class="question">如果完全不考虑录取难度，我愿不愿意在这里生活、学习、交朋友、成长四年？</p></header>
-<main><aside class="sidebar" aria-label="学校列表"><div class="controls"><div class="section-heading"><h2>学校研究池</h2><button class="reset" id="reset" type="button">显示全部</button></div><input id="search" type="search" placeholder="搜索中文名、英文名或城市" aria-label="搜索学校" autocomplete="off"><select id="type-filter" aria-label="学校类型筛选"></select><p class="count" id="result-count" aria-live="polite"></p></div><div class="school-list" id="school-list"></div></aside><section class="map-panel" aria-label="美国选校地图"><div class="map-heading"><h2>学校分布</h2><span>点击学校，探索它的位置</span></div><div id="map" aria-label="学校位置交互地图"></div><div class="legend" id="legend" aria-label="学校类型图例"></div></section></main>
+<header><div class="heading"><div><h1>Mira<span>｜2027 美本选校</span></h1><p class="subtitle" id="subtitle"></p></div><button class="reset" id="reset" type="button">显示全部</button></div><p class="question">如果完全不考虑录取难度，我愿不愿意在这里生活、学习、交朋友、成长四年？</p></header>
+<main><aside class="sidebar" aria-label="学校列表"><div class="controls"><input id="search" type="search" placeholder="搜索学校、城市或州" aria-label="搜索学校" autocomplete="off"><div id="type-filter" class="segments" role="group" aria-label="学校类型筛选"></div><p class="count" id="result-count" aria-live="polite"></p></div><div class="school-list" id="school-list"></div></aside><section class="map-panel" aria-label="美国选校地图"><div id="map" aria-label="学校位置交互地图"></div><div class="legend" id="legend" aria-label="学校类型图例"></div></section><aside id="details" class="details" aria-label="学校详情" tabindex="-1"><button id="sheet-close" class="sheet-close" type="button" aria-label="关闭学校详情">×</button><div id="detail-content"></div></aside></main>
+<div id="backdrop" class="backdrop" aria-hidden="true"></div>
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 'use strict';
 // 学校数据是唯一的数据入口。可直接新增、删除学校或添加未来使用的字段。
 const schools = [
 
-{ name:"University of Richmond", cnName:"里士满大学", city:"Richmond", state:"Virginia", type:"A", lat:37.5751, lng:-77.5407 },
+{ name:"University of Richmond", cnName:"里士满大学", city:"Richmond", state:"Virginia", type:"A", lat:37.5751, lng:-77.5407, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
 
-{ name:"Macalester College", cnName:"麦卡莱斯特学院", city:"Saint Paul", state:"Minnesota", type:"A", lat:44.9394, lng:-93.1698 },
+{ name:"Macalester College", cnName:"麦卡莱斯特学院", city:"Saint Paul", state:"Minnesota", type:"A", lat:44.9394, lng:-93.1698, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
 
-{ name:"Denison University", cnName:"丹尼森大学", city:"Granville", state:"Ohio", type:"A", lat:40.0725, lng:-82.5227 },
+{ name:"Denison University", cnName:"丹尼森大学", city:"Granville", state:"Ohio", type:"A", lat:40.0725, lng:-82.5227, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
 
-{ name:"Dickinson College", cnName:"狄金森学院", city:"Carlisle", state:"Pennsylvania", type:"A", lat:40.2023, lng:-77.1975 },
+{ name:"Dickinson College", cnName:"狄金森学院", city:"Carlisle", state:"Pennsylvania", type:"A", lat:40.2023, lng:-77.1975, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
 
-{ name:"College of Wooster", cnName:"伍斯特学院", city:"Wooster", state:"Ohio", type:"A", lat:40.8117, lng:-81.9351 },
+{ name:"College of Wooster", cnName:"伍斯特学院", city:"Wooster", state:"Ohio", type:"A", lat:40.8117, lng:-81.9351, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
 
-{ name:"St. Olaf College", cnName:"圣奥拉夫学院", city:"Northfield", state:"Minnesota", type:"A", lat:44.4583, lng:-93.1849 },
+{ name:"St. Olaf College", cnName:"圣奥拉夫学院", city:"Northfield", state:"Minnesota", type:"A", lat:44.4583, lng:-93.1849, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
 
-{ name:"Oberlin College", cnName:"欧柏林学院", city:"Oberlin", state:"Ohio", type:"A", lat:41.2939, lng:-82.2174 },
+{ name:"Oberlin College", cnName:"欧柏林学院", city:"Oberlin", state:"Ohio", type:"A", lat:41.2939, lng:-82.2174, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
 
-{ name:"University of Rochester", cnName:"罗切斯特大学", city:"Rochester", state:"New York", type:"B", lat:43.1292, lng:-77.6280 },
+{ name:"University of Rochester", cnName:"罗切斯特大学", city:"Rochester", state:"New York", type:"B", lat:43.1292, lng:-77.6280, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
 
-{ name:"Brandeis University", cnName:"布兰迪斯大学", city:"Waltham", state:"Massachusetts", type:"B", lat:42.3657, lng:-71.2584 },
+{ name:"Brandeis University", cnName:"布兰迪斯大学", city:"Waltham", state:"Massachusetts", type:"B", lat:42.3657, lng:-71.2584, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
 
-{ name:"William & Mary", cnName:"威廉玛丽大学", city:"Williamsburg", state:"Virginia", type:"B", lat:37.2710, lng:-76.7138 },
+{ name:"William & Mary", cnName:"威廉玛丽大学", city:"Williamsburg", state:"Virginia", type:"B", lat:37.2710, lng:-76.7138, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
 
-{ name:"Wake Forest University", cnName:"维克森林大学", city:"Winston-Salem", state:"North Carolina", type:"B", lat:36.1341, lng:-80.2783 },
+{ name:"Wake Forest University", cnName:"维克森林大学", city:"Winston-Salem", state:"North Carolina", type:"B", lat:36.1341, lng:-80.2783, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
 
-{ name:"Clark University", cnName:"克拉克大学", city:"Worcester", state:"Massachusetts", type:"B", lat:42.2515, lng:-71.8233 },
+{ name:"Clark University", cnName:"克拉克大学", city:"Worcester", state:"Massachusetts", type:"B", lat:42.2515, lng:-71.8233, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
 
-{ name:"Lehigh University", cnName:"理海大学", city:"Bethlehem", state:"Pennsylvania", type:"C", lat:40.6079, lng:-75.3783 },
+{ name:"Lehigh University", cnName:"理海大学", city:"Bethlehem", state:"Pennsylvania", type:"C", lat:40.6079, lng:-75.3783, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
 
-{ name:"Syracuse University", cnName:"雪城大学", city:"Syracuse", state:"New York", type:"C", lat:43.0392, lng:-76.1351 },
+{ name:"Syracuse University", cnName:"雪城大学", city:"Syracuse", state:"New York", type:"C", lat:43.0392, lng:-76.1351, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
 
-{ name:"University of Denver", cnName:"丹佛大学", city:"Denver", state:"Colorado", type:"C", lat:39.6781, lng:-104.9618 },
+{ name:"University of Denver", cnName:"丹佛大学", city:"Denver", state:"Colorado", type:"C", lat:39.6781, lng:-104.9618, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
 
-{ name:"University of Pittsburgh", cnName:"匹兹堡大学", city:"Pittsburgh", state:"Pennsylvania", type:"D", lat:40.4443, lng:-79.9608 },
+{ name:"University of Pittsburgh", cnName:"匹兹堡大学", city:"Pittsburgh", state:"Pennsylvania", type:"D", lat:40.4443, lng:-79.9608, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
 
-{ name:"University of Massachusetts Amherst", cnName:"马萨诸塞大学阿默斯特分校", city:"Amherst", state:"Massachusetts", type:"D", lat:42.3868, lng:-72.5301 },
+{ name:"University of Massachusetts Amherst", cnName:"马萨诸塞大学阿默斯特分校", city:"Amherst", state:"Massachusetts", type:"D", lat:42.3868, lng:-72.5301, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
 
-{ name:"University of Wisconsin–Madison", cnName:"威斯康星大学麦迪逊分校", city:"Madison", state:"Wisconsin", type:"D", lat:43.0766, lng:-89.4125 },
+{ name:"University of Wisconsin–Madison", cnName:"威斯康星大学麦迪逊分校", city:"Madison", state:"Wisconsin", type:"D", lat:43.0766, lng:-89.4125, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
 
-{ name:"American University", cnName:"美利坚大学", city:"Washington", state:"District of Columbia", type:"E", lat:38.9379, lng:-77.0901 },
+{ name:"American University", cnName:"美利坚大学", city:"Washington", state:"District of Columbia", type:"E", lat:38.9379, lng:-77.0901, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
 
-{ name:"George Washington University", cnName:"乔治华盛顿大学", city:"Washington", state:"District of Columbia", type:"E", lat:38.8997, lng:-77.0486 }
+{ name:"George Washington University", cnName:"乔治华盛顿大学", city:"Washington", state:"District of Columbia", type:"E", lat:38.8997, lng:-77.0486, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" }
 
 ];
 const schoolTypes = {
- A: {label:'关系密集型本科环境', en:'Relationship-intensive undergraduate', color:'#4d7d6d'},
- B: {label:'导师＋研究探索型', en:'Advising & research exploration', color:'#557c9d'},
- C: {label:'项目／职业探索型', en:'Project & career-oriented', color:'#b1874b'},
- D: {label:'大型研究／旗舰大学', en:'Large research / flagship', color:'#87729d'},
- E: {label:'城市嵌入型', en:'Urban-embedded', color:'#b76f68'}
+ A: {label:'关系密集型本科环境', en:'Relationship-intensive undergraduate', color:'#708b80'},
+ B: {label:'导师＋研究探索型', en:'Advising & research exploration', color:'#788da1'},
+ C: {label:'项目／职业探索型', en:'Project & career-oriented', color:'#a38f6d'},
+ D: {label:'大型研究／旗舰大学', en:'Large research / flagship', color:'#91849e'},
+ E: {label:'城市嵌入型', en:'Urban-embedded', color:'#ac8581'}
 };
 const byId = id => document.getElementById(id);
 const typeKeys = [...new Set(schools.map(s => s.type))].sort();
 const typeInfo = key => schoolTypes[key] || {label:key,en:'',color:'#6b7b72'};
-const states = new Set(schools.map(s => s.state));
-const hasDC = states.delete('District of Columbia');
-byId('subtitle').textContent = `当前阶段性研究池：${schools.length}所`;
-byId('school-total').textContent = schools.length;
-byId('state-total').textContent = states.size;
-byId('state-label').textContent = hasDC ? 'States + DC' : 'States';
-byId('type-total').textContent = typeKeys.length;
-byId('type-filter').add(new Option('全部学校类型', ''));
-for (const key of typeKeys) {
- const info = typeInfo(key);
- byId('type-filter').add(new Option(`${key}｜${info.label}`, key));
- const item = document.createElement('span'); item.className='legend-item';
- const dot = document.createElement('span'); dot.className='dot'; dot.style.background=info.color;
- item.append(dot, document.createTextNode(`${key} ${info.label}`)); byId('legend').append(item);
+let activeType = '';
+byId('subtitle').textContent = `当前阶段性研究池 · ${schools.length}所`;
+for (const key of ['', ...typeKeys]) {
+ const info=typeInfo(key), button=textElement('button','',key || '全部');
+ button.type='button';button.dataset.type=key;
+ button.title=key ? `${key}｜${info.label}` : '全部学校类型';
+ button.setAttribute('aria-label',button.title);button.setAttribute('aria-pressed',String(!key));
+ button.addEventListener('click',()=>{activeType=key;render();});
+ byId('type-filter').append(button);
+ if (!key) continue;
+ const item=textElement('span','legend-item','');
+ const dot=textElement('span','dot','');dot.style.background=info.color;
+ item.append(dot,document.createTextNode(`${key} ${info.label}`));byId('legend').append(item);
 }
+// 判断和备注只保存在本浏览器；学校的研究内容仍由 schools 管理。
+const storageKey='mira-2027-college-preferences-v2';
+let preferences={};
+try { const saved=JSON.parse(localStorage.getItem(storageKey) || '{}');
+ if (saved && typeof saved==='object' && !Array.isArray(saved)) preferences=saved;
+} catch (_) { /* 存储不可用时仍可在本次页面会话中使用。 */ }
+const mobile=window.matchMedia('(max-width:900px)');
+let returnFocus=null;
+function updatePreference(school, field, value) {
+ const key=school.name;
+ preferences[key]={...preferences[key], [field]:value};
+ try {localStorage.setItem(storageKey,JSON.stringify(preferences));byId('save-status').textContent='已保存在此浏览器';}
+ catch (_) {byId('save-status').textContent='本次已记录；浏览器暂不支持保存';}
+}
+function detailView() {
+ const root=byId('detail-content');root.replaceChildren();
+ if (selectedIndex===null) {
+  const empty=textElement('div','detail-empty','');
+  empty.append(textElement('h2','','选择一所学校'),textElement('p','','点击地图或左侧学校名称查看详情。'));
+  root.append(empty);return;
+ }
+ const school=schools[selectedIndex],info=typeInfo(school.type);
+ const saved=preferences[school.name] || {};
+ const title=textElement('h2','detail-name',school.cnName);title.id='detail-title';
+ root.append(title,textElement('p','detail-en',school.name),textElement('p','detail-place',`${school.city}, ${school.state}`));
+ const badge=textElement('div','type-label',`${school.type}｜${info.label}`);badge.style.color=info.color;
+ root.append(badge,textElement('p','type-en',info.en));
+ [['value','为什么值得继续看'],['tradeoff','主要交换成本'],['miraQuestion','Mira 要回答的问题']].forEach(([field,label],i)=>{
+  const section=textElement('section','research-block',''),heading=textElement('h3','','');
+  heading.append(textElement('span','',String(i+1).padStart(2,'0')),document.createTextNode(label));
+  const value=typeof school[field]==='string' ? school[field].trim() : '';
+  section.append(heading,textElement('p',value?'':'placeholder',value || '待补充'));root.append(section);
+ });
+ const judgment=textElement('section','judgment','');judgment.append(textElement('h3','','Mira的感觉'));
+ const choices=textElement('div','segments choice-segments','');choices.setAttribute('role','group');choices.setAttribute('aria-label','Mira的感觉');
+ for (const label of ['很想继续了解','需要更多了解','暂时无感']) {
+  const button=textElement('button','',label);button.type='button';
+  button.setAttribute('aria-pressed',String((saved.miraChoice ?? school.miraChoice)===label));
+  button.addEventListener('click',()=>{for(const item of choices.children)item.setAttribute('aria-pressed',String(item===button));updatePreference(school,'miraChoice',label);});
+  choices.append(button);
+ }
+ const label=textElement('label','note-label','一句话备注');label.htmlFor='school-note';
+ const note=document.createElement('textarea');note.id='school-note';note.rows=2;note.placeholder='写下一点感受…';
+ note.value=typeof saved.note==='string'?saved.note:school.note || '';
+ note.addEventListener('input',()=>updatePreference(school,'note',note.value));
+ const status=textElement('p','save-status','仅保存在此浏览器');status.id='save-status';status.setAttribute('aria-live','polite');
+ judgment.append(choices,label,note,status);root.append(judgment);
+}
+function openSheet() {
+ if(!mobile.matches)return;
+ returnFocus=document.activeElement;
+ byId('details').classList.add('open');byId('backdrop').classList.add('open');document.body.classList.add('sheet-open');
+ byId('details').setAttribute('role','dialog');byId('details').setAttribute('aria-modal','true');
+ document.querySelector('header').inert=true;byId('school-list').closest('.sidebar').inert=true;byId('map').closest('.map-panel').inert=true;
+ byId('details').scrollTop=0;byId('sheet-close').focus({preventScroll:true});
+}
+function closeSheet() {
+ byId('details').classList.remove('open');byId('backdrop').classList.remove('open');document.body.classList.remove('sheet-open');
+ byId('details').removeAttribute('role');byId('details').removeAttribute('aria-modal');
+ document.querySelector('header').inert=false;byId('school-list').closest('.sidebar').inert=false;byId('map').closest('.map-panel').inert=false;
+ if(returnFocus?.isConnected)returnFocus.focus({preventScroll:true});returnFocus=null;
+}
+byId('sheet-close').addEventListener('click',closeSheet);byId('backdrop').addEventListener('click',closeSheet);
+mobile.addEventListener('change',()=>{closeSheet();if(map)map.invalidateSize({pan:false});});
+document.addEventListener('keydown',event=>{
+ if(!mobile.matches || !byId('details').classList.contains('open'))return;
+ if(event.key==='Escape'){event.preventDefault();closeSheet();}
+ if(event.key==='Tab'){
+  const nodes=[...byId('details').querySelectorAll('button,textarea')],first=nodes[0],last=nodes[nodes.length-1];
+  if(event.shiftKey && document.activeElement===first){event.preventDefault();last.focus();}
+  else if(!event.shiftKey && document.activeElement===last){event.preventDefault();first.focus();}
+ }
+});
 let map = null, markerLayer = null, selectedIndex = null;
 const markers = new Map();
 let pendingPopup = null;
@@ -125,18 +199,20 @@ function highlight(index, scroll) {
 }
 function selectSchool(index) {
  highlight(index,false);
+ detailView();openSheet();
  if (!map) return;
  const marker=markers.get(index); if (!marker) return;
  if (pendingPopup) { map.off('moveend',pendingPopup); pendingPopup=null; }
  map.stop();
- if (window.matchMedia('(max-width:850px)').matches) byId('map').scrollIntoView({behavior:reducedMotion?'instant':'smooth',block:'center'});
+
  pendingPopup = () => { marker.openPopup(); pendingPopup=null; };
  map.once('moveend',pendingPopup);
  map.flyTo(marker.getLatLng(),11,{animate:!reducedMotion,duration:.85});
 }
 function render() {
  const query=byId('search').value.trim().toLocaleLowerCase();
- const type=byId('type-filter').value;
+ const type=activeType;
+ for(const button of byId('type-filter').children)button.setAttribute('aria-pressed',String(button.dataset.type===type));
  const visible=schools.map((school,index)=>({school,index})).filter(({school:s})=>(!type||s.type===type)&&(!query||[s.cnName,s.name,s.city,s.state].some(value=>value.toLocaleLowerCase().includes(query))));
  if(map){if(pendingPopup){map.off('moveend',pendingPopup);pendingPopup=null;}map.stop();map.closePopup();markerLayer.clearLayers();} markers.clear();
  if (!visible.some(item=>item.index===selectedIndex)) selectedIndex=null;
@@ -144,23 +220,23 @@ function render() {
  byId('result-count').textContent=`显示 ${visible.length} / ${schools.length} 所学校`;
  for (const {school:s,index} of visible) {
   const info=typeInfo(s.type), button=document.createElement('button');
-  button.type='button';button.className='school';button.dataset.index=index;
+  button.type='button';button.className='school';button.dataset.index=index;button.style.setProperty('--type-color',info.color);
   const dot=document.createElement('span');dot.className='dot';dot.style.background=info.color;
   button.append(dot,textElement('strong','',s.cnName),textElement('span','english',s.name),textElement('span','place',`${s.city}, ${s.state}`));
   button.addEventListener('click',()=>selectSchool(index));byId('school-list').append(button);
   if (map) {
    const pin=document.createElement('div');pin.className='pin';pin.style.background=info.color;pin.append(textElement('span','',s.type));
    const marker=L.marker([s.lat,s.lng],{title:s.cnName,alt:s.cnName,icon:L.divIcon({className:'pin-wrap',html:pin,iconSize:[28,36],iconAnchor:[13,32],popupAnchor:[0,-31]})}).bindPopup(makePopup(s),{maxWidth:280}).addTo(markerLayer);
-   marker.on('click',()=>highlight(index,true)); markers.set(index,marker);
+   marker.on('click',()=>{if(pendingPopup){map.off('moveend',pendingPopup);pendingPopup=null;}map.stop();highlight(index,true);detailView();openSheet();}); markers.set(index,marker);
   }
  }
  highlight(selectedIndex,false);
+ detailView();
  if (!visible.length) byId('school-list').append(textElement('p','empty','没有匹配的学校。试试其他关键词，或点击“显示全部”。'));
  if (map && visible.length) map.fitBounds(visible.map(({school:s})=>[s.lat,s.lng]),{padding:[45,45],maxZoom:10,animate:false});
 }
 byId('search').addEventListener('input',render);
-byId('type-filter').addEventListener('change',render);
-byId('reset').addEventListener('click',()=>{byId('search').value='';byId('type-filter').value='';selectedIndex=null;render();byId('school-list').scrollTop=0;});
+byId('reset').addEventListener('click',()=>{byId('search').value='';activeType='';selectedIndex=null;render();byId('school-list').scrollTop=0;});
 render();
 </script>
 </body>

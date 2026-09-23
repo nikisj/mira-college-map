@@ -6,238 +6,710 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mira｜2027 美本选校工作台</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai&amp;display=swap&amp;text=%E6%84%BF%E4%BD%A0%E5%8E%BB%E4%B8%80%E4%B8%AA%E5%9C%B0%E6%96%B9%EF%BC%8C%E8%AE%A4%E8%AF%86%E4%B8%80%E4%BA%9B%E4%BA%BA%EF%BC%8C%E8%AF%BB%E4%B8%80%E4%BA%9B%E4%B9%A6%EF%BC%8C%E6%83%B3%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%EF%BC%8C%E7%84%B6%E5%90%8E%E4%B8%8D%E6%96%AD%E6%88%90%E4%B8%BA%E8%87%AA%E5%B7%B1%E3%80%82">
 <style>
-:root{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI",Arial,sans-serif;color:#27272b;background:#fff;font-synthesis:none}*{box-sizing:border-box}body{margin:0;height:100dvh;display:flex;flex-direction:column}button,input,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid #748b83;outline-offset:3px}button{color:inherit}header{flex:none;padding:20px 28px 15px;border-bottom:1px solid #ededf0}.heading{display:flex;align-items:center;justify-content:space-between;gap:20px}h1{font-size:19px;letter-spacing:-.5px;font-weight:600;margin:0}h1 span{font-weight:400;color:#66666d;font-size:16px;margin-left:10px}.subtitle{font-size:11px;color:#8a8a91;margin:6px 0 0}.question{font-size:12px;line-height:1.7;color:#96969c;margin:12px 0 0}.reset{border:0;background:#f5f5f7;border-radius:20px;padding:9px 15px;font-size:12px}.reset:hover{background:#eeeef1}main{display:grid;grid-template-columns:minmax(0,24fr) minmax(0,50fr) minmax(0,26fr);flex:1;min-height:0;padding:18px 0}.sidebar{min-width:0;min-height:0;display:flex;flex-direction:column;padding:0 18px}.controls{padding:0 3px 10px}input,textarea{width:100%;min-width:0;background:#f5f5f7;border:1px solid transparent;border-radius:12px;padding:12px;color:#303035;font-size:12px}input::placeholder,textarea::placeholder{color:#94949a}input:focus,textarea:focus{background:#fff;border-color:#d7d7dd}.segments{display:flex;background:#f2f2f4;border-radius:12px;padding:3px;gap:2px;margin-top:10px}.segments button{flex:1;min-width:0;border:0;background:transparent;border-radius:9px;padding:9px 2px;font-size:11px;color:#808087}.segments button[aria-pressed="true"]{background:#fff;color:#29292e}.count{font-size:10px;color:#96969c;margin:14px 0 0;letter-spacing:.3px}.school-list{overflow:auto;flex:1;min-height:0;scrollbar-width:thin}.school{display:block;width:100%;position:relative;text-align:left;border:0;border-bottom:1px solid #f0f0f2;border-radius:0;background:#fff;padding:16px 10px 16px 22px}.school:hover{background:#f8f8f9}.school.selected{background:#f0f0f3;border-radius:10px;border-bottom-color:transparent}.school.selected:before{content:"";position:absolute;left:0;top:20px;bottom:20px;width:2px;background:var(--type-color);border-radius:2px}.dot{display:inline-block;width:7px;height:7px;border-radius:50%;flex-shrink:0}.school>.dot{position:absolute;left:8px;top:23px}.school strong{display:block;font-size:13px;font-weight:550;line-height:1.65}.school .english{display:block;font-size:11px;line-height:1.55;color:#818188;margin-top:3px;overflow-wrap:anywhere}.school .place{display:block;font-size:10px;color:#a0a0a6;margin-top:5px;line-height:1.5}.empty{font-size:12px;color:#89898f;line-height:1.8;padding:20px 8px}.map-panel{min-width:0;min-height:0;display:flex;flex-direction:column}#map{flex:1;min-height:240px;border-radius:16px;background:#f0f1ef;isolation:isolate}.legend{display:flex;flex-wrap:wrap;gap:8px 16px;padding:13px 5px 0}.legend-item{display:flex;align-items:center;gap:6px;font-size:10px;color:#85858c;line-height:1.6}.pin-wrap{background:none;border:0}.pin{width:26px;height:26px;border:2px solid white;border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 1px 3px #0002;display:flex;align-items:center;justify-content:center}.pin span{transform:rotate(45deg);color:#fff;font-size:10px;font-weight:600}.leaflet-popup-content{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;line-height:1.6;margin:16px 18px;min-width:170px}.popup-cn{font-size:15px;font-weight:600;margin-bottom:4px}.popup-en{font-size:11px;color:#797980}.popup-place{font-size:11px;color:#919198;margin:6px 0 10px}.popup-type{font-size:11px;border-top:1px solid #eeeef0;padding-top:9px}.popup-type small{display:block;color:#96969b;font-size:10px;margin-top:3px}.leaflet-popup-content-wrapper{border-radius:12px;box-shadow:0 2px 12px #00000012}.leaflet-control-attribution{font-size:10px!important}.map-error{padding:25px;color:#85858c;font-size:13px;line-height:1.8}.details{min-width:0;overflow:auto;padding:12px 25px 24px;scrollbar-width:thin}.detail-empty{padding-top:65px}.detail-empty h2{font-size:17px;font-weight:500}.detail-empty p{font-size:12px;color:#96969c;line-height:1.9}.detail-name{font-size:23px;font-weight:600;letter-spacing:-.5px;line-height:1.5;margin:5px 0 6px;overflow-wrap:anywhere}.detail-en{font-size:13px;line-height:1.6;color:#7b7b83;margin:0;overflow-wrap:anywhere}.detail-place{font-size:11px;line-height:1.6;color:#a0a0a7;margin:12px 0 18px}.type-label{display:inline-flex;align-items:center;gap:7px;font-size:11px;line-height:1.6}.type-en{font-size:10px;color:#a0a0a7;line-height:1.6;margin:5px 0 22px}.research-block{padding:20px 0;border-top:1px solid #eeeef1}.research-block h3{font-size:12px;font-weight:550;line-height:1.7;margin:0}.research-block h3 span{font-size:10px;font-weight:400;color:#b0b0b6;margin-right:10px;font-variant-numeric:tabular-nums}.research-block p{font-size:12px;line-height:1.9;color:#66666e;margin:10px 0 0;white-space:pre-wrap;overflow-wrap:anywhere}.research-block p.placeholder{color:#b0b0b6}.judgment{border-top:1px solid #eeeef1;padding-top:22px;margin-top:8px}.judgment h3{font-size:12px;font-weight:550;margin:0}.choice-segments button{font-size:10px;line-height:1.6;padding:9px 4px}.note-label{display:block;font-size:11px;color:#82828a;margin:22px 0 9px}textarea{resize:vertical;min-height:74px;line-height:1.7}.save-status{min-height:16px;font-size:10px;color:#a0a0a7;margin:7px 0 0}.sheet-close,.backdrop{display:none}[hidden]{display:none!important}
-@media(min-width:1600px){header{padding-left:36px;padding-right:36px}.sidebar{padding:0 26px}.details{padding-left:32px;padding-right:32px}}
-@media(max-width:900px){body{height:auto;min-height:100dvh}header{padding:18px 18px 13px}h1{font-size:18px}h1 span{font-size:14px;margin-left:6px}.heading{gap:8px}.question{font-size:11px;margin-top:10px}.reset{font-size:11px;padding:8px 11px;flex-shrink:0}main{display:flex;flex-direction:column;padding:14px;gap:22px;overflow:visible}.map-panel{order:0;height:47dvh;min-height:330px;flex:none}.sidebar{order:1;padding:0;min-height:350px}.controls{padding:0 0 12px}.school-list{max-height:60dvh;min-height:180px;overflow:auto}.school{padding-top:17px;padding-bottom:17px}.legend{gap:5px 12px;padding-top:10px}.legend-item{font-size:9px}.details{display:none;position:fixed;inset:auto 0 0;max-height:82dvh;border-radius:20px 20px 0 0;padding:20px 24px max(28px,env(safe-area-inset-bottom));background:#fff;z-index:2001;overscroll-behavior:contain}.details.open{display:block}.detail-name{padding-right:42px;font-size:23px}.sheet-close{display:block;position:absolute;right:18px;top:17px;width:34px;height:34px;border:0;background:#f3f3f5;border-radius:50%;font-size:22px;line-height:1}.backdrop.open{display:block;position:fixed;inset:0;background:#0003;z-index:2000}body.sheet-open{overflow:hidden}.research-block{padding:17px 0}.choice-segments button{font-size:11px;padding:10px 4px}}
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+:root{
+ --bg:#f5f1e8;--paper:#fffdf8;--ink:#1f2a24;--muted:#6b746e;--faint:#9aa39d;
+ --green:#2f5a45;--green-2:#46725b;--green-soft:#e7eee6;--amber-soft:#f6ecd6;
+ --line:rgba(31,42,36,.10);--shadow:0 6px 24px rgba(31,42,36,.07);
+ --r:18px;font-family:"Manrope",-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+ color:var(--ink);background:var(--bg);
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{background:var(--bg);display:flex;flex-direction:column;min-height:100dvh}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--green-2);outline-offset:2px}
+[hidden]{display:none!important}
+a{color:var(--green)}
+.top{display:flex;align-items:center;gap:22px;padding:14px 28px;background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:900}
+.brand{display:flex;align-items:baseline;gap:12px;flex:none}
+.brand b{font-family:Georgia,"Times New Roman",serif;font-size:34px;letter-spacing:-.5px;color:var(--green)}
+.brand span{font-size:13px;color:var(--muted);border-left:1px solid var(--line);padding-left:12px}
+.quote{font-family:"LXGW WenKai",serif;font-size:clamp(14px,1.1vw,20px);color:var(--green);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+nav.tabs{display:flex;gap:6px;flex:none}
+nav.tabs button,.menu-btn{border:0;background:transparent;padding:9px 14px;border-radius:999px;font-size:14px;color:var(--muted)}
+nav.tabs button[aria-current="page"]{background:var(--green-soft);color:var(--green);font-weight:600}
+.menu{position:relative}
+.menu-pop{position:absolute;right:0;top:calc(100% + 6px);background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:8px;min-width:240px;display:flex;flex-direction:column;gap:4px}
+.menu-pop button,.menu-pop label{border:0;background:transparent;text-align:left;padding:9px 10px;border-radius:10px;font-size:14px;cursor:pointer}
+.menu-pop button:hover,.menu-pop label:hover{background:var(--green-soft)}
+.menu-pop small{color:var(--muted);padding:4px 10px 6px;font-size:12px;line-height:1.5}
+@media(max-width:1199px){.quote{display:none}}
+@media(max-width:767px){.top{flex-wrap:wrap;padding:10px 16px;gap:8px}.brand b{font-size:28px}nav.tabs{order:3;width:100%;overflow-x:auto}}
+main{flex:1;min-height:0}
+.view{padding:22px 28px 40px}
+@media(max-width:767px){.view{padding:16px}}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#fff}
+.tag{display:inline-flex;align-items:center;gap:4px;font-size:12px;padding:3px 9px;border-radius:999px;background:var(--green-soft);color:var(--green);white-space:nowrap}
+.tag.adm{background:#eef0f4;color:#3d4a5c}
+.tag.watch{background:var(--amber-soft);color:#8a5d14}
+.tag.adjusting{background:#f7e1d6;color:#8f3f17}
+.tag.cold{background:#e4edf5;color:#2e5575}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.btn{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:7px 14px;font-size:13px;text-decoration:none;color:var(--ink)}
+.btn.primary{background:var(--green);color:#fff;border-color:var(--green)}
+.heart{border:0;background:transparent;font-size:19px;line-height:1;color:#cfd3cf;padding:4px}
+.heart[aria-pressed="true"]{color:#c0584f}
+.overview{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;background:var(--green);color:#fff;border-radius:var(--r);padding:20px 24px;margin-bottom:10px}
+.overview div small{display:block;opacity:.72;font-size:12px;margin-bottom:4px}
+.overview div b{font-weight:600;font-size:15px;line-height:1.45}
+@media(max-width:1023px){.overview{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.section-head{display:flex;align-items:baseline;gap:10px;margin:26px 0 12px}
+.section-head h2{margin:0;font-size:19px}
+.section-head span{color:var(--muted);font-size:13px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow)}
+.card-top{display:flex;justify-content:space-between;gap:8px}
+.card h3{margin:0;font-size:18px}
+.card .en{font-size:13px;color:var(--muted)}
+.card .meta{font-size:12px;color:var(--faint)}
+.card p.head{margin:0;font-size:14px;line-height:1.65;color:#3a4540}
+.card .actions{display:flex;gap:8px;margin-top:auto;padding-top:4px}
+.empty-note{color:var(--muted);font-size:14px;background:var(--paper);border:1px dashed var(--line);border-radius:var(--r);padding:18px}
+details.fold{margin-top:22px}
+details.fold summary{cursor:pointer;font-size:15px;color:var(--muted);padding:8px 0}
+.sublabel{font-size:11px;color:var(--faint);letter-spacing:.04em}
+.explore{display:grid;grid-template-columns:340px minmax(0,1fr) 470px;gap:16px;padding:16px 20px;height:calc(100dvh - 70px)}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);min-height:0}
+.side{display:flex;flex-direction:column;overflow:hidden}
+.filters{padding:16px 16px 10px;border-bottom:1px solid var(--line);overflow:auto;max-height:52%}
+.filters input[type=search]{width:100%;border:1px solid var(--line);border-radius:999px;padding:10px 14px;background:var(--bg)}
+.fgroup{margin-top:12px}
+.fgroup p{margin:0 0 6px;font-size:12px;color:var(--muted)}
+.fgroup p em{font-style:normal;color:var(--faint)}
+.toggle{display:flex;align-items:center;gap:8px;font-size:13px;margin-top:12px;color:var(--muted)}
+.listbar{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;font-size:13px;color:var(--muted)}
+.listbar button{border:0;background:none;color:var(--green);font-size:13px}
+.list{overflow:auto;flex:1}
+.item{display:grid;grid-template-columns:12px 1fr auto;gap:10px;align-items:start;padding:12px 16px;border-top:1px solid var(--line);cursor:pointer}
+.item:hover{background:#faf7ef}
+.item[aria-selected="true"]{background:var(--green-soft);box-shadow:inset 3px 0 0 var(--green)}
+.dot{width:10px;height:10px;border-radius:50%;margin-top:6px;display:inline-block}
+.item strong{display:block;font-size:15px}
+.item .en{display:block;font-size:12px;color:var(--muted)}
+.item .place{display:block;font-size:12px;color:var(--faint);margin-bottom:5px}
+.mapwrap{position:relative;overflow:hidden}
+#map{position:absolute;inset:0;border-radius:var(--r);background:#dfe6e3}
+.map-modes{position:absolute;top:14px;left:54px;z-index:500;background:var(--paper);border-radius:999px;padding:4px;box-shadow:var(--shadow);display:flex}
+.map-modes button{border:0;background:transparent;padding:7px 14px;border-radius:999px;font-size:13px}
+.map-modes button[aria-pressed="true"]{background:var(--green);color:#fff}
+.legend{position:absolute;left:14px;bottom:14px;z-index:500;background:var(--paper);border-radius:14px;padding:8px 12px;box-shadow:var(--shadow);display:flex;flex-wrap:wrap;gap:10px;font-size:12px;max-width:calc(100% - 28px)}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+.map-msg{position:absolute;top:62px;left:54px;z-index:500;background:var(--paper);border-radius:10px;padding:6px 10px;font-size:12px;box-shadow:var(--shadow);margin:0}
+.detail-col{overflow:auto}
+.placeholder{padding:40px 28px;color:var(--muted);line-height:1.8}
+.placeholder h2{color:var(--ink);font-size:20px;margin:0 0 6px}
+@media(max-width:1199px){.explore{grid-template-columns:320px minmax(0,1fr)}.detail-col{display:none}}
+.ftoggle,.pane-switch{display:none}
+@media(max-width:767px){
+ .explore{grid-template-columns:1fr;height:auto;padding:0 12px 12px}
+ .pane-switch{display:flex;gap:6px;padding:12px 12px 10px;position:sticky;top:0;z-index:800;background:var(--bg)}
+ .top{position:static}
+ .pane-switch button{flex:1;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:9px;font-size:14px}
+ .pane-switch button[aria-pressed="true"]{background:var(--green);color:#fff;border-color:var(--green)}
+ .explore[data-pane="list"] .mapwrap,.explore[data-pane="map"] .side{display:none}
+ .filters{max-height:none}
+ .ftoggle{display:block;width:100%;margin-top:10px;border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:9px 14px;font-size:14px;text-align:left}
+ .filters:not(.open) .fmore{display:none}
+ .list{max-height:none;overflow:visible}
+ .mapwrap{height:calc(100dvh - 170px)}
+ .drawer{width:100vw}
+ .d{padding:14px 16px 28px}
+ .d h2{font-size:24px}
+ .hero{height:110px}
+ .status-row{grid-template-columns:1fr;gap:6px}
+ .status{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:9px 12px}
+ .status small{margin:0}
+ .cards{grid-template-columns:1fr}
+ table.cmp{min-width:520px}
+ table.cmp tbody th{width:92px}
+ table.cmp th,table.cmp td{padding:10px;font-size:13px}
+ .cmp-pick select{min-width:0;flex:1 1 140px}
+}
+.backdrop{position:fixed;inset:0;background:rgba(20,28,24,.28);z-index:1000}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(600px,94vw);background:var(--paper);z-index:1001;overflow:auto;box-shadow:-12px 0 40px rgba(0,0,0,.12)}
+.drawer-close{position:sticky;top:12px;float:right;margin:12px 12px 0 0;z-index:3;border:0;background:rgba(255,255,255,.92);border-radius:50%;width:36px;height:36px;font-size:20px;box-shadow:var(--shadow)}
+.d{padding:18px 22px 30px}
+.hero{height:150px;border-radius:16px;background:linear-gradient(135deg,var(--green) 0%,#4c7a62 100%);position:relative;overflow:hidden;color:#fff;margin-bottom:16px}
+.hero img{width:100%;height:100%;object-fit:cover;display:block}
+.hero .ghost{position:absolute;left:18px;top:16px;font-size:28px;opacity:.28;font-weight:600;letter-spacing:-.5px;white-space:nowrap}
+.hero .place{position:absolute;left:18px;bottom:14px;font-size:13px;opacity:.9}
+.hero .credit{position:absolute;right:10px;bottom:8px;font-size:10px;opacity:.8}
+.d h2{margin:0;font-size:28px}
+.d .en{color:var(--muted);margin:2px 0 6px}
+.d .facts{font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 14px;margin-bottom:12px}
+.d .links{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.first{background:var(--green-soft);border-radius:16px;padding:16px 18px;margin-bottom:14px}
+.first p{margin:0;line-height:1.7}
+.first .q{margin-top:8px;color:var(--green);font-weight:600}
+.status-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:16px}
+.status{border:1px solid var(--line);border-radius:14px;padding:10px 12px}
+.status small{display:block;font-size:11px;color:var(--muted);margin-bottom:3px}
+.status b{font-size:14px;font-weight:600}
+.dtabs{display:flex;gap:4px;overflow-x:auto;border-bottom:1px solid var(--line);margin-bottom:14px}
+.dtabs button{border:0;background:none;padding:10px 10px;font-size:13px;color:var(--muted);white-space:nowrap;border-bottom:2px solid transparent}
+.dtabs button[aria-selected="true"]{color:var(--green);border-bottom-color:var(--green);font-weight:600}
+.block{border-radius:16px;padding:14px 16px;margin-bottom:10px;background:#f7f5ef}
+.block.good{background:var(--green-soft)}
+.block.warn{background:var(--amber-soft)}
+.block h4{margin:0 0 6px;font-size:14px}
+.block p{margin:0;font-size:14px;line-height:1.7}
+.block .src{display:inline-block;margin-top:6px;font-size:12px}
+.ev{font-size:11px;padding:2px 7px;border-radius:999px;margin-left:6px;font-weight:500;vertical-align:1px}
+.ev.verified{background:var(--green);color:#fff}.ev.partial{background:var(--amber-soft);color:#8a5d14}.ev.none{background:#eceae4;color:var(--muted)}
+.todo{color:var(--faint);font-style:normal}
+table.kv{width:100%;border-collapse:collapse;font-size:14px}
+table.kv td{padding:7px 4px;border-bottom:1px solid var(--line);vertical-align:top}
+table.kv td:first-child{color:var(--muted);width:42%}
+.mine-box{margin-top:18px;background:var(--green);color:#fff;border-radius:16px;padding:16px 18px}
+.mine-box h4{margin:0 0 10px;font-size:15px}
+.mine-box .chip{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.mine-box .chip[aria-pressed="true"]{background:#fff;color:var(--green)}
+.mine-box input,.mine-box textarea{width:100%;border:0;border-radius:12px;padding:10px 12px;margin-top:10px;background:rgba(255,255,255,.95);color:var(--ink)}
+.mine-box textarea{min-height:80px;resize:vertical}
+.mine-box small{display:block;margin-top:8px;opacity:.75;font-size:12px}
+.cmp-pick{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 18px}
+.cmp-pick select{border:1px solid var(--line);border-radius:12px;padding:9px 12px;background:var(--paper);min-width:220px}
+.cmp-wrap{overflow-x:auto}
+table.cmp{border-collapse:separate;border-spacing:0;width:100%;min-width:640px;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+table.cmp th,table.cmp td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);font-size:14px;line-height:1.6}
+table.cmp thead th{background:var(--green-soft);font-size:15px}
+table.cmp tbody th{color:var(--muted);font-weight:500;width:170px;background:#faf8f2}
+.hint{color:var(--muted);font-size:13px}
+.leaflet-tooltip{font-family:inherit}
+@media(max-width:767px){
+ .drawer{width:100vw}
+ .d{padding:14px 16px 28px}
+ .d h2{font-size:24px}
+ .hero{height:110px}
+ .status-row{grid-template-columns:1fr;gap:6px}
+ .status{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:9px 12px}
+ .status small{margin:0}
+ table.cmp{min-width:520px}
+ table.cmp tbody th{width:92px}
+ table.cmp th,table.cmp td{padding:10px;font-size:13px}
+ .cmp-pick select{min-width:0;flex:1 1 140px}
+}
+.mine-map{position:relative;height:380px;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);margin:14px 0 4px;background:#dfe6e3}
+#mine-map-el{position:absolute;inset:0}
+@media(max-width:767px){.mine-map{height:280px}}
 </style>
 </head>
 <body>
-<header><div class="heading"><div><h1>Mira<span>｜2027 美本选校</span></h1><p class="subtitle" id="subtitle"></p></div><button class="reset" id="reset" type="button">显示全部</button></div><p class="question">如果完全不考虑录取难度，我愿不愿意在这里生活、学习、交朋友、成长四年？</p></header>
-<main><aside class="sidebar" aria-label="学校列表"><div class="controls"><input id="search" type="search" placeholder="搜索学校、城市或州" aria-label="搜索学校" autocomplete="off"><div id="type-filter" class="segments" role="group" aria-label="学校类型筛选"></div><p class="count" id="result-count" aria-live="polite"></p></div><div class="school-list" id="school-list"></div></aside><section class="map-panel" aria-label="美国选校地图"><div id="map" aria-label="学校位置交互地图"></div><div class="legend" id="legend" aria-label="学校类型图例"></div></section><aside id="details" class="details" aria-label="学校详情" tabindex="-1"><button id="sheet-close" class="sheet-close" type="button" aria-label="关闭学校详情">×</button><div id="detail-content"></div></aside></main>
-<div id="backdrop" class="backdrop" aria-hidden="true"></div>
+<header class="top">
+ <div class="brand"><b>Mira</b><span>2027 选校工作台</span></div>
+ <div class="quote">愿你去一个地方，认识一些人，读一些书，想一些问题，然后不断成为自己。</div>
+ <nav class="tabs" aria-label="主导航">
+  <button data-view="mine">我的选校</button>
+  <button data-view="us">美国看看</button>
+  <button data-view="global">全球看看</button>
+  <button data-view="compare">学校对比</button>
+ </nav>
+ <div class="menu">
+  <button class="menu-btn" id="notes-btn" aria-haspopup="true" aria-expanded="false">我的笔记 ▾</button>
+  <div class="menu-pop" id="notes-pop" hidden>
+   <small>标记和笔记只保存在这台设备的浏览器里。换设备时先导出，再在另一台设备导入。</small>
+   <button id="export-btn">导出我的笔记</button>
+   <label>导入我的笔记<input type="file" id="import-file" accept="application/json" hidden></label>
+  </div>
+ </div>
+</header>
+<main>
+ <section id="view-mine" class="view" hidden></section>
+ <section id="view-explore" hidden>
+  <div class="pane-switch" role="group" aria-label="显示方式"><button data-pane="list" aria-pressed="true">列表</button><button data-pane="map" aria-pressed="false">地图</button></div>
+  <div class="explore" id="explore" data-pane="list">
+   <aside class="panel side" aria-label="学校列表">
+    <div class="filters" id="filters"></div>
+    <div class="listbar"><span id="count"></span><button id="reset">清除筛选</button></div>
+    <div class="list" id="list" role="listbox" aria-label="学校"></div>
+   </aside>
+   <section class="panel mapwrap" aria-label="地图">
+    <div id="map"></div>
+    <div class="map-modes" role="group" aria-label="地图模式">
+     <button data-mode="standard" aria-pressed="true">标准</button>
+     <button data-mode="chinese" aria-pressed="false">中文</button>
+     <button data-mode="satellite" aria-pressed="false">卫星</button>
+    </div>
+    <p class="map-msg" id="map-msg" hidden></p>
+    <div class="legend" id="legend"></div>
+   </section>
+   <aside class="panel detail-col" id="detail-col" aria-label="学校详情"></aside>
+  </div>
+ </section>
+ <section id="view-compare" class="view" hidden></section>
+</main>
+<div class="backdrop" id="backdrop" hidden></div>
+<aside class="drawer" id="drawer" hidden aria-label="学校详情"><button class="drawer-close" id="drawer-close" aria-label="关闭">×</button><div id="drawer-body"></div></aside>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="profile.js"></script>
+<script src="schools.js"></script>
+<script src="research.js"></script>
 <script>
 'use strict';
-// 学校数据是唯一的数据入口。可直接新增、删除学校或添加未来使用的字段。
-const schools = [
+// MapTiler 公开浏览器密钥（已限制域名：nikisj.github.io）。
+const MAPTILER_KEY = "mwBEpjq0pe4ry64fyVae";
 
-{ name:"University of Richmond", cnName:"里士满大学", city:"Richmond", state:"Virginia", type:"A", lat:37.5751, lng:-77.5407, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
+const $ = id => document.getElementById(id);
+function h(tag, attrs, ...kids){
+ const el=document.createElement(tag);
+ if(attrs)for(const [k,v] of Object.entries(attrs)){
+  if(v==null||v===false)continue;
+  if(k==='class')el.className=v;
+  else if(k==='text')el.textContent=v;
+  else if(k==='value')el.value=v;
+  else if(k==='checked')el.checked=!!v;
+  else if(k.startsWith('on'))el.addEventListener(k.slice(2),v);
+  else el.setAttribute(k,v===true?'':v);
+ }
+ for(const kid of kids.flat()){if(kid==null||kid===false)continue;el.append(kid.nodeType?kid:document.createTextNode(String(kid)));}
+ return el;
+}
+const R = Object.fromEntries(research.map(r=>[r.id,r]));
+const S = Object.fromEntries(schools.map(s=>[s.id,s]));
+const firstSentence = t => { if(!t)return ''; const m=t.match(/^[^。！？]*[。！？]/); return m?m[0]:t; };
 
-{ name:"Macalester College", cnName:"麦卡莱斯特学院", city:"Saint Paul", state:"Minnesota", type:"A", lat:44.9394, lng:-93.1698, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
-
-{ name:"Denison University", cnName:"丹尼森大学", city:"Granville", state:"Ohio", type:"A", lat:40.0725, lng:-82.5227, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
-
-{ name:"Dickinson College", cnName:"狄金森学院", city:"Carlisle", state:"Pennsylvania", type:"A", lat:40.2023, lng:-77.1975, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
-
-{ name:"College of Wooster", cnName:"伍斯特学院", city:"Wooster", state:"Ohio", type:"A", lat:40.8117, lng:-81.9351, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
-
-{ name:"St. Olaf College", cnName:"圣奥拉夫学院", city:"Northfield", state:"Minnesota", type:"A", lat:44.4583, lng:-93.1849, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
-
-{ name:"Oberlin College", cnName:"欧柏林学院", city:"Oberlin", state:"Ohio", type:"A", lat:41.2939, lng:-82.2174, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
-
-{ name:"University of Rochester", cnName:"罗切斯特大学", city:"Rochester", state:"New York", type:"B", lat:43.1292, lng:-77.6280, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
-
-{ name:"Brandeis University", cnName:"布兰迪斯大学", city:"Waltham", state:"Massachusetts", type:"B", lat:42.3657, lng:-71.2584, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
-
-{ name:"William & Mary", cnName:"威廉玛丽大学", city:"Williamsburg", state:"Virginia", type:"B", lat:37.2710, lng:-76.7138, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
-
-{ name:"Wake Forest University", cnName:"维克森林大学", city:"Winston-Salem", state:"North Carolina", type:"B", lat:36.1341, lng:-80.2783, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
-
-{ name:"Clark University", cnName:"克拉克大学", city:"Worcester", state:"Massachusetts", type:"B", lat:42.2515, lng:-71.8233, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
-
-{ name:"Lehigh University", cnName:"理海大学", city:"Bethlehem", state:"Pennsylvania", type:"C", lat:40.6079, lng:-75.3783, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
-
-{ name:"Syracuse University", cnName:"雪城大学", city:"Syracuse", state:"New York", type:"C", lat:43.0392, lng:-76.1351, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
-
-{ name:"University of Denver", cnName:"丹佛大学", city:"Denver", state:"Colorado", type:"C", lat:39.6781, lng:-104.9618, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
-
-{ name:"University of Pittsburgh", cnName:"匹兹堡大学", city:"Pittsburgh", state:"Pennsylvania", type:"D", lat:40.4443, lng:-79.9608, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
-
-{ name:"University of Massachusetts Amherst", cnName:"马萨诸塞大学阿默斯特分校", city:"Amherst", state:"Massachusetts", type:"D", lat:42.3868, lng:-72.5301, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
-
-{ name:"University of Wisconsin–Madison", cnName:"威斯康星大学麦迪逊分校", city:"Madison", state:"Wisconsin", type:"D", lat:43.0766, lng:-89.4125, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
-
-{ name:"American University", cnName:"美利坚大学", city:"Washington", state:"District of Columbia", type:"E", lat:38.9379, lng:-77.0901, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" },
-
-{ name:"George Washington University", cnName:"乔治华盛顿大学", city:"Washington", state:"District of Columbia", type:"E", lat:38.8997, lng:-77.0486, value:"", tradeoff:"", miraQuestion:"", miraChoice:"", note:"" }
-
-];
-const schoolTypes = {
- A: {label:'关系密集型本科环境', en:'Relationship-intensive undergraduate', color:'#708b80'},
- B: {label:'导师＋研究探索型', en:'Advising & research exploration', color:'#788da1'},
- C: {label:'项目／职业探索型', en:'Project & career-oriented', color:'#a38f6d'},
- D: {label:'大型研究／旗舰大学', en:'Large research / flagship', color:'#91849e'},
- E: {label:'城市嵌入型', en:'Urban-embedded', color:'#ac8581'}
+const LABEL = {
+ status:{new:'新发现',priority:'优先研究',secondary:'第二优先',watch:'观察',climate:'因气候暂不考虑',none:'仅排名层'},
+ statusColor:{new:'#b7822c',priority:'#2f5a45',secondary:'#7fa38c',watch:'#c0673a',climate:'#7a9bb8',none:'#b9bdb8'},
+ region:{Northeast:'东北',South:'南部',Midwest:'中西部',West:'西部'},
+ kind:{university:'综合大学',lac:'文理学院',specialized:'专业型大学'},
+ size:{small:'小型',medium:'中型',large:'大型'},
+ band:{1:'极冷',2:'很冷',3:'冷',4:'凉',5:'温和'},
+ health:{stable:'稳定',watch:'需要观察',adjusting:'正在经历较大调整'},
+ mark:{interested:'感兴趣',continue:'继续了解',notFit:'不太合适',notNow:'暂不考虑'},
+ ev:{verified:'已核实',partial:'部分',none:'未查到'},
+ synth:{realProblems:'跨领域真实问题',crossResources:'跨领域资源可达',methods:'方法论硬底子',expression:'表达与知识翻译'},
+ synthHint:{realProblems:'有没有不同专业一起解决真实问题的项目、课程或毕业课题',crossResources:'能不能真正接触和组合其他领域的课、老师和学院',methods:'数据、统计、研究方法、写作，能不能形成 T 的那一竖',expression:'写作、演讲、公共沟通，把理解重新说清楚的训练'},
+ setting:{Urban:'城市',Suburban:'城市近郊','College town':'大学城','Small town':'小城'},
+ inst:{'Private Liberal Arts College':'私立文理学院','Private Liberal Arts University':'私立文理大学','Private Liberal Arts College and Conservatory':'私立文理学院与音乐学院','Private Research University':'私立研究型大学','Public Research University':'公立研究型大学'}
 };
-const byId = id => document.getElementById(id);
-const typeKeys = [...new Set(schools.map(s => s.type))].sort();
-const typeInfo = key => schoolTypes[key] || {label:key,en:'',color:'#6b7b72'};
-let activeType = '';
-byId('subtitle').textContent = `当前阶段性研究池 · ${schools.length}所`;
-for (const key of ['', ...typeKeys]) {
- const info=typeInfo(key), button=textElement('button','',key || '全部');
- button.type='button';button.dataset.type=key;
- button.title=key ? `${key}｜${info.label}` : '全部学校类型';
- button.setAttribute('aria-label',button.title);button.setAttribute('aria-pressed',String(!key));
- button.addEventListener('click',()=>{activeType=key;render();});
- byId('type-filter').append(button);
- if (!key) continue;
- const item=textElement('span','legend-item','');
- const dot=textElement('span','dot','');dot.style.background=info.color;
- item.append(dot,document.createTextNode(`${key} ${info.label}`));byId('legend').append(item);
-}
-// 判断和备注只保存在本浏览器；学校的研究内容仍由 schools 管理。
-const storageKey='mira-2027-college-preferences-v2';
-let preferences={};
-try { const saved=JSON.parse(localStorage.getItem(storageKey) || '{}');
- if (saved && typeof saved==='object' && !Array.isArray(saved)) preferences=saved;
-} catch (_) { /* 存储不可用时仍可在本次页面会话中使用。 */ }
-const mobile=window.matchMedia('(max-width:900px)');
-let returnFocus=null;
-function updatePreference(school, field, value) {
- const key=school.name;
- preferences[key]={...preferences[key], [field]:value};
- try {localStorage.setItem(storageKey,JSON.stringify(preferences));byId('save-status').textContent='已保存在此浏览器';}
- catch (_) {byId('save-status').textContent='本次已记录；浏览器暂不支持保存';}
-}
-function detailView() {
- const root=byId('detail-content');root.replaceChildren();
- if (selectedIndex===null) {
-  const empty=textElement('div','detail-empty','');
-  empty.append(textElement('h2','','选择一所学校'),textElement('p','','点击地图或左侧学校名称查看详情。'));
-  root.append(empty);return;
- }
- const school=schools[selectedIndex],info=typeInfo(school.type);
- const saved=preferences[school.name] || {};
- const title=textElement('h2','detail-name',school.cnName);title.id='detail-title';
- root.append(title,textElement('p','detail-en',school.name),textElement('p','detail-place',`${school.city}, ${school.state}`));
- const badge=textElement('div','type-label',`${school.type}｜${info.label}`);badge.style.color=info.color;
- root.append(badge,textElement('p','type-en',info.en));
- [['value','为什么值得继续看'],['tradeoff','主要交换成本'],['miraQuestion','Mira 要回答的问题']].forEach(([field,label],i)=>{
-  const section=textElement('section','research-block',''),heading=textElement('h3','','');
-  heading.append(textElement('span','',String(i+1).padStart(2,'0')),document.createTextNode(label));
-  const value=typeof school[field]==='string' ? school[field].trim() : '';
-  section.append(heading,textElement('p',value?'':'placeholder',value || '待补充'));root.append(section);
- });
- const judgment=textElement('section','judgment','');judgment.append(textElement('h3','','Mira的感觉'));
- const choices=textElement('div','segments choice-segments','');choices.setAttribute('role','group');choices.setAttribute('aria-label','Mira的感觉');
- for (const label of ['很想继续了解','需要更多了解','暂时无感']) {
-  const button=textElement('button','',label);button.type='button';
-  button.setAttribute('aria-pressed',String((saved.miraChoice ?? school.miraChoice)===label));
-  button.addEventListener('click',()=>{for(const item of choices.children)item.setAttribute('aria-pressed',String(item===button));updatePreference(school,'miraChoice',label);});
-  choices.append(button);
- }
- const label=textElement('label','note-label','一句话备注');label.htmlFor='school-note';
- const note=document.createElement('textarea');note.id='school-note';note.rows=2;note.placeholder='写下一点感受…';
- note.value=typeof saved.note==='string'?saved.note:school.note || '';
- note.addEventListener('input',()=>updatePreference(school,'note',note.value));
- const status=textElement('p','save-status','仅保存在此浏览器');status.id='save-status';status.setAttribute('aria-live','polite');
- judgment.append(choices,label,note,status);root.append(judgment);
-}
-function openSheet() {
- if(!mobile.matches)return;
- returnFocus=document.activeElement;
- byId('details').classList.add('open');byId('backdrop').classList.add('open');document.body.classList.add('sheet-open');
- byId('details').setAttribute('role','dialog');byId('details').setAttribute('aria-modal','true');
- document.querySelector('header').inert=true;byId('school-list').closest('.sidebar').inert=true;byId('map').closest('.map-panel').inert=true;
- byId('details').scrollTop=0;byId('sheet-close').focus({preventScroll:true});
-}
-function closeSheet() {
- byId('details').classList.remove('open');byId('backdrop').classList.remove('open');document.body.classList.remove('sheet-open');
- byId('details').removeAttribute('role');byId('details').removeAttribute('aria-modal');
- document.querySelector('header').inert=false;byId('school-list').closest('.sidebar').inert=false;byId('map').closest('.map-panel').inert=false;
- if(returnFocus?.isConnected)returnFocus.focus({preventScroll:true});returnFocus=null;
-}
-byId('sheet-close').addEventListener('click',closeSheet);byId('backdrop').addEventListener('click',closeSheet);
-mobile.addEventListener('change',()=>{closeSheet();if(map)map.invalidateSize({pan:false});});
-document.addEventListener('keydown',event=>{
- if(!mobile.matches || !byId('details').classList.contains('open'))return;
- if(event.key==='Escape'){event.preventDefault();closeSheet();}
- if(event.key==='Tab'){
-  const nodes=[...byId('details').querySelectorAll('button,textarea')],first=nodes[0],last=nodes[nodes.length-1];
-  if(event.shiftKey && document.activeElement===first){event.preventDefault();last.focus();}
-  else if(!event.shiftKey && document.activeElement===last){event.preventDefault();first.focus();}
- }
-});
-let map = null, markerLayer = null, selectedIndex = null;
-const markers = new Map();
-let pendingPopup = null;
-const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-if (window.L) {
- map = L.map('map', {scrollWheelZoom:true}).setView([39,-96],4);
- L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  maxZoom:19, attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
- }).addTo(map);
- markerLayer = L.layerGroup().addTo(map);
- new ResizeObserver(() => map.invalidateSize({pan:false})).observe(byId('map'));
-} else {
- byId('map').className='map-error';
- byId('map').textContent='地图未能加载。请连接网络后刷新页面，以加载地图组件与底图。学校列表和筛选仍可使用。';
-}
-function textElement(tag, className, text) {
- const element = document.createElement(tag); element.className=className; element.textContent=text; return element;
-}
-function makePopup(school) {
- const info=typeInfo(school.type), popup=document.createElement('div');
- popup.append(textElement('div','popup-cn',school.cnName),textElement('div','popup-en',school.name),textElement('div','popup-place',`${school.city}, ${school.state}`));
- const type=textElement('div','popup-type',`${school.type}｜${info.label}`); type.style.color=info.color;
- type.append(textElement('small','',info.en)); popup.append(type); return popup;
-}
-function highlight(index, scroll) {
- selectedIndex=index;
- for (const button of byId('school-list').querySelectorAll('.school')) {
-  const active=Number(button.dataset.index)===index;
-  button.classList.toggle('selected',active); button.setAttribute('aria-pressed',String(active));
-  if (active && scroll) {
-   const list=byId('school-list');
-   list.scrollTo({top:list.scrollTop+button.getBoundingClientRect().top-list.getBoundingClientRect().top-(list.clientHeight-button.offsetHeight)/2,behavior:reducedMotion?'instant':'smooth'});
-  }
- }
-}
-function selectSchool(index) {
- highlight(index,false);
- detailView();openSheet();
- if (!map) return;
- const marker=markers.get(index); if (!marker) return;
- if (pendingPopup) { map.off('moveend',pendingPopup); pendingPopup=null; }
- map.stop();
+const TIERS=['远距离冲刺','冲刺','匹配偏冲','匹配','匹配偏稳'];
+const pubPriv = s => /Public/.test(s.institutionType||'')?'公立':(s.institutionType?'私立':'');
 
- pendingPopup = () => { marker.openPopup(); pendingPopup=null; };
- map.once('moveend',pendingPopup);
- map.flyTo(marker.getLatLng(),11,{animate:!reducedMotion,duration:.85});
-}
-function render() {
- const query=byId('search').value.trim().toLocaleLowerCase();
- const type=activeType;
- for(const button of byId('type-filter').children)button.setAttribute('aria-pressed',String(button.dataset.type===type));
- const visible=schools.map((school,index)=>({school,index})).filter(({school:s})=>(!type||s.type===type)&&(!query||[s.cnName,s.name,s.city,s.state].some(value=>value.toLocaleLowerCase().includes(query))));
- if(map){if(pendingPopup){map.off('moveend',pendingPopup);pendingPopup=null;}map.stop();map.closePopup();markerLayer.clearLayers();} markers.clear();
- if (!visible.some(item=>item.index===selectedIndex)) selectedIndex=null;
- byId('school-list').replaceChildren();
- byId('result-count').textContent=`显示 ${visible.length} / ${schools.length} 所学校`;
- for (const {school:s,index} of visible) {
-  const info=typeInfo(s.type), button=document.createElement('button');
-  button.type='button';button.className='school';button.dataset.index=index;button.style.setProperty('--type-color',info.color);
-  const dot=document.createElement('span');dot.className='dot';dot.style.background=info.color;
-  button.append(dot,textElement('strong','',s.cnName),textElement('span','english',s.name),textElement('span','place',`${s.city}, ${s.state}`));
-  button.addEventListener('click',()=>selectSchool(index));byId('school-list').append(button);
-  if (map) {
-   const pin=document.createElement('div');pin.className='pin';pin.style.background=info.color;pin.append(textElement('span','',s.type));
-   const marker=L.marker([s.lat,s.lng],{title:s.cnName,alt:s.cnName,icon:L.divIcon({className:'pin-wrap',html:pin,iconSize:[28,36],iconAnchor:[13,32],popupAnchor:[0,-31]})}).bindPopup(makePopup(s),{maxWidth:280}).addTo(markerLayer);
-   marker.on('click',()=>{if(pendingPopup){map.off('moveend',pendingPopup);pendingPopup=null;}map.stop();highlight(index,true);detailView();openSheet();}); markers.set(index,marker);
+/* personal data (local only) */
+const KEY='mira-2027-v3', OLDKEY='mira-2027-college-preferences-v2';
+let me={marks:{},compare:[]};
+function save(){try{localStorage.setItem(KEY,JSON.stringify(me));return true;}catch(_){return false;}}
+try{const v=JSON.parse(localStorage.getItem(KEY)||'null');if(v&&typeof v==='object'){me.marks=v.marks||{};me.compare=Array.isArray(v.compare)?v.compare:[];}}catch(_){}
+try{
+ if(!Object.keys(me.marks).length){
+  const old=JSON.parse(localStorage.getItem(OLDKEY)||'null');
+  if(old&&typeof old==='object'){
+   const map={'很想继续了解':'interested','需要更多了解':'continue','暂时无感':'notNow'};
+   for(const [name,p] of Object.entries(old)){
+    const s=schools.find(x=>x.name===name);if(!s||!p)continue;
+    me.marks[s.id]={mark:map[p.miraChoice]||'',note:p.note||'',majorInterest:p.miraMajorInterest||'',updated:new Date().toISOString()};
+   }
+   save();
   }
  }
- highlight(selectedIndex,false);
- detailView();
- if (!visible.length) byId('school-list').append(textElement('p','empty','没有匹配的学校。试试其他关键词，或点击“显示全部”。'));
- if (map && visible.length) map.fitBounds(visible.map(({school:s})=>[s.lat,s.lng]),{padding:[45,45],maxZoom:10,animate:false});
+}catch(_){}
+const markOf=id=>(me.marks[id]||{}).mark||'';
+function setMark(id,patch){me.marks[id]=Object.assign({mark:'',note:'',majorInterest:''},me.marks[id],patch,{updated:new Date().toISOString()});return save();}
+function toggleCompare(id){
+ const i=me.compare.indexOf(id);
+ if(i>=0)me.compare.splice(i,1);else{if(me.compare.length>=3)me.compare.shift();me.compare.push(id);}
+ save();
 }
-byId('search').addEventListener('input',render);
-byId('reset').addEventListener('click',()=>{byId('search').value='';activeType='';selectedIndex=null;render();byId('school-list').scrollTop=0;});
-render();
+
+/* small components */
+function heartBtn(id,onChange){
+ const b=h('button',{class:'heart','aria-label':'标记为感兴趣','aria-pressed':String(markOf(id)==='interested'),text:'♥',title:'感兴趣'});
+ b.addEventListener('click',e=>{e.stopPropagation();const on=markOf(id)!=='interested';setMark(id,{mark:on?'interested':''});b.setAttribute('aria-pressed',String(on));onChange&&onChange();});
+ return b;
+}
+function compareBtn(id){
+ const b=h('button',{class:'btn',text:me.compare.includes(id)?'已加入对比':'加入对比'});
+ b.addEventListener('click',e=>{e.stopPropagation();toggleCompare(id);b.textContent=me.compare.includes(id)?'已加入对比':'加入对比';});
+ return b;
+}
+function schoolTags(s,max=4){
+ const r=R[s.id],out=[];
+ if(r){
+  r.tags.slice(0,2).forEach(t=>out.push(h('span',{class:'tag',text:t})));
+  if(r.admission)out.push(h('span',{class:'tag adm',text:'录取：'+r.admission.current}));
+  if(r.health&&r.health.level!=='stable')out.push(h('span',{class:'tag '+r.health.level,text:r.health.level==='watch'?'● 需要观察':'● 较大调整'}));
+ }
+ if(s.climate&&s.climate.outOfScope)out.push(h('span',{class:'tag cold',text:'气候：不在选校范围'}));
+ if(s.stemTag)out.push(h('span',{class:'tag adm',text:'STEM 取向强'}));
+ return h('div',{class:'tags'},out.slice(0,max));
+}
+const metaLine=s=>[s.country==='US'?s.state:s.country,pubPriv(s),LABEL.kind[s.kind]].filter(Boolean).join(' · ');
+
+/* views */
+let view='mine';
+function go(v){
+ view=v;
+ for(const b of document.querySelectorAll('nav.tabs button'))b.setAttribute('aria-current',b.dataset.view===v?'page':'false');
+ $('view-mine').hidden=v!=='mine';$('view-compare').hidden=v!=='compare';$('view-explore').hidden=!(v==='us'||v==='global');
+ if(location.hash!=='#'+v)history.replaceState(null,'','#'+v);
+ if(v==='mine')renderMine();
+ if(v==='compare')renderCompare();
+ if(v==='us'||v==='global'){const changed=scope!==v;scope=v;if(changed){F.region='';selected=null;}ensureMap();renderFilters();renderExplore(true);}
+}
+document.querySelectorAll('nav.tabs button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.view)));
+
+/* mine */
+function schoolCard(s){
+ const r=R[s.id];
+ const head=r?(r.headline||firstSentence(r.value)):(s.howToStudy||'');
+ return h('article',{class:'card'},
+  h('div',{class:'card-top'},h('div',null,h('div',{class:'sublabel',text:LABEL.status[s.researchStatus]||''}),h('h3',{text:s.cnName}),h('div',{class:'en',text:s.name}),h('div',{class:'meta',text:metaLine(s)})),heartBtn(s.id)),
+  head?h('p',{class:'head',text:head}):null,
+  schoolTags(s),
+  h('div',{class:'actions'},h('button',{class:'btn primary',text:'查看学校 →',onclick:()=>openDrawer(s.id)}),compareBtn(s.id)));
+}
+function renderMine(){
+ const root=$('view-mine');root.replaceChildren();
+ const p=profile;
+ root.append(h('div',{class:'overview'},
+  h('div',null,h('small',{text:'Mira 的选校方向'}),h('b',{text:p.direction})),
+  h('div',null,h('small',{text:'培养目标'}),h('b',{text:p.goal})),
+  h('div',null,h('small',{text:'当前基准'}),h('b',{text:`GPA ${p.gpa} · SAT ${p.sat} · TOEFL ${p.toefl}`})),
+  h('div',null,h('small',{text:'目标'}),h('b',{text:`SAT ${p.satTarget} · TOEFL ${p.toeflTarget}`}))));
+ renderMineMap(root);
+ const order={priority:0,secondary:1};
+ const by=st=>schools.filter(s=>st.includes(s.researchStatus)).sort((a,b)=>((order[a.researchStatus]??2)-(order[b.researchStatus]??2))||a.cnName.localeCompare(b.cnName,'zh'));
+ const group=(title,note,list)=>{
+  root.append(h('div',{class:'section-head'},h('h2',{text:title}),h('span',{text:note})));
+  root.append(list.length?h('div',{class:'cards'},list.map(schoolCard)):h('p',{class:'empty-note',text:'暂时还没有学校。'}));
+ };
+ const active=by(['priority','secondary']);
+ group('正在认真了解',`优先研究与第二优先 · ${active.length} 所`,active);
+ group('新发现','刚进入研究池、还没有认真研究',by(['new']));
+ group('观察','学校正处在较大调整期，暂不投入同等精力',by(['watch']));
+ const cold=by(['climate']);
+ if(cold.length)root.append(h('details',{class:'fold'},h('summary',{text:`已研究 · 因气候暂不考虑（${cold.length} 所）`}),h('div',{class:'cards'},cold.map(schoolCard))));
+}
+
+/* mine map */
+let mineMap=null;
+function renderMineMap(root){
+ const box=h('div',{class:'mine-map'},h('div',{id:'mine-map-el'}));
+ const pool=schools.filter(s=>s.researchStatus!=='none');
+ const used=[...new Set(pool.map(s=>s.researchStatus))];
+ box.append(h('div',{class:'legend'},used.map(k=>h('span',null,h('span',{class:'dot',style:`background:${LABEL.statusColor[k]};margin:0`}),LABEL.status[k]))));
+ root.append(box);
+ if(mineMap){mineMap.remove();mineMap=null;}
+ if(!window.L){box.append(h('p',{class:'map-msg',text:'地图组件未加载，请检查网络后刷新。'}));return;}
+ mineMap=L.map('mine-map-el',{scrollWheelZoom:false,worldCopyJump:true});
+ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; OpenStreetMap contributors'}).addTo(mineMap);
+ for(const s of pool){
+  L.circleMarker([s.lat,s.lng],{radius:8,color:'#fff',weight:2,fillColor:LABEL.statusColor[s.researchStatus],fillOpacity:.95})
+   .bindTooltip(s.cnName,{direction:'top',offset:[0,-6]}).on('click',()=>openDrawer(s.id)).addTo(mineMap);
+ }
+ const fit=()=>{mineMap.invalidateSize();if(pool.length)mineMap.fitBounds(L.latLngBounds(pool.map(s=>[s.lat,s.lng])).pad(.08),{maxZoom:6});else mineMap.setView([39,-96],4);};
+ fit();setTimeout(fit,50);
+}
+
+/* explore */
+let scope='us',selected=null,map=null,standardLayer=null,markerLayer=null;
+const F={q:'',group:'',region:'',kind:'',size:'',tier:'',mark:'',cold:false,synth:[]};
+const inScope=s=>scope==='us'?s.country==='US':s.country!=='US';
+function chipGroup(label,key,options,note){
+ const wrap=h('div',{class:'fgroup'},h('p',null,label,note?h('em',{text:' · '+note}):null));
+ const chips=h('div',{class:'chips'});
+ for(const [val,text] of options){
+  const on=Array.isArray(F[key])?F[key].includes(val):F[key]===val;
+  const b=h('button',{class:'chip','aria-pressed':String(on),text});
+  b.addEventListener('click',()=>{
+   if(Array.isArray(F[key])){const i=F[key].indexOf(val);i>=0?F[key].splice(i,1):F[key].push(val);}
+   else F[key]=val;
+   renderFilters();renderExplore();
+  });
+  chips.append(b);
+ }
+ wrap.append(chips);return wrap;
+}
+function renderFilters(){
+ const root=$('filters');root.replaceChildren();
+ const q=h('input',{type:'search',id:'q',placeholder:'搜索学校、城市或州',value:F.q,'aria-label':'搜索学校'});
+ q.addEventListener('input',()=>{F.q=q.value;renderExplore();});root.append(q);
+ const nOn=['group','region','kind','size','tier','mark'].filter(k=>F[k]).length+F.synth.length+(F.cold?1:0);
+ const tg=h('button',{class:'ftoggle','aria-expanded':String(filtersOpen),text:`筛选${nOn?'（已选 '+nOn+' 项）':''} ${filtersOpen?'▴':'▾'}`});
+ tg.addEventListener('click',()=>{filtersOpen=!filtersOpen;renderFilters();});root.append(tg);
+ root.classList.toggle('open',filtersOpen);
+ const more=h('div',{class:'fmore'});root.append(more);
+ const _append=root.append.bind(root);root.append=(...x)=>more.append(...x);
+ root.append(chipGroup('研究分组','group',[['','全部'],['research','研究池'],['priority','正在认真了解'],['watch','观察'],['none','仅排名层']]));
+ if(scope==='us')root.append(chipGroup('地区','region',[['','全部'],['Northeast','东北'],['South','南部'],['Midwest','中西部'],['West','西部']]));
+ else{const cs=[...new Set(schools.filter(inScope).map(s=>s.country))].sort();if(cs.length)root.append(chipGroup('国家或地区','region',[['','全部'],...cs.map(c=>[c,c])]));}
+ root.append(chipGroup('学校类型','kind',[['','全部'],['university','综合大学'],['lac','文理学院']]));
+ root.append(chipGroup('规模','size',[['','全部'],['small','小型'],['medium','中型'],['large','大型']],'按本科人数'));
+ root.append(chipGroup('录取位置（当前）','tier',[['','全部'],...TIERS.map(t=>[t,t])],'仅研究池'));
+ root.append(chipGroup('综合者训练','synth',Object.entries(LABEL.synth),'仅研究池 · 已核实'));
+ root.append(chipGroup('我的标记','mark',[['','全部'],...Object.entries(LABEL.mark),['unmarked','未标记']]));
+ const cb=h('input',{type:'checkbox',checked:F.cold});
+ cb.addEventListener('change',()=>{F.cold=cb.checked;renderExplore(true);});
+ root.append(h('label',{class:'toggle'},cb,'显示极冷地区的学校（不在 Mira 选校范围）'));
+ root.append=_append;
+}
+let filtersOpen=false;
+document.querySelectorAll('.pane-switch button').forEach(b=>b.addEventListener('click',()=>{
+ $('explore').dataset.pane=b.dataset.pane;
+ document.querySelectorAll('.pane-switch button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
+ if(b.dataset.pane==='map'&&map){setTimeout(()=>{map.invalidateSize();renderExplore(true);},0);}
+}));
+function passes(s){
+ const r=R[s.id];
+ if(!inScope(s))return false;
+ if(!F.cold&&s.climate&&s.climate.outOfScope)return false;
+ if(F.q){const q=F.q.toLowerCase();if(![s.cnName,s.name,s.city,s.state,s.country].some(v=>String(v||'').toLowerCase().includes(q)))return false;}
+ if(F.group==='research'&&s.researchStatus==='none')return false;
+ if(F.group==='priority'&&!['priority','secondary'].includes(s.researchStatus))return false;
+ if(F.group==='watch'&&s.researchStatus!=='watch')return false;
+ if(F.group==='none'&&s.researchStatus!=='none')return false;
+ if(F.region&&(scope==='us'?s.region:s.country)!==F.region)return false;
+ if(F.kind&&s.kind!==F.kind)return false;
+ if(F.size&&s.size!==F.size)return false;
+ if(F.tier&&!(r&&r.admission&&r.admission.current===F.tier))return false;
+ if(F.synth.length&&!(r&&F.synth.every(k=>r.synthesizer[k]&&r.synthesizer[k].evidence==='verified')))return false;
+ if(F.mark){const m=markOf(s.id);if(F.mark==='unmarked'?m:m!==F.mark)return false;}
+ return true;
+}
+$('reset').addEventListener('click',()=>{Object.assign(F,{q:'',group:'',region:'',kind:'',size:'',tier:'',mark:'',cold:false,synth:[]});renderFilters();renderExplore(true);});
+function renderExplore(fit){
+ const ORD={priority:0,secondary:1,new:2,watch:3,climate:4,none:5};
+ const list=schools.filter(passes).sort((a,b)=>(ORD[a.researchStatus]-ORD[b.researchStatus])||a.cnName.localeCompare(b.cnName,'zh'));
+ const total=schools.filter(inScope).length;
+ $('count').textContent=`显示 ${list.length} / ${total} 所`;
+ const root=$('list');root.replaceChildren();
+ if(!total)root.append(h('p',{class:'placeholder',text:'全球学校会在后续步骤加入：QS 2027 前 50 中美国以外的 36 所。'}));
+ else if(!list.length)root.append(h('p',{class:'placeholder',text:'没有符合条件的学校，试试清除筛选。'}));
+ for(const s of list){
+  const it=h('div',{class:'item',role:'option','aria-selected':String(selected===s.id),tabindex:'0'},
+   h('span',{class:'dot',style:`background:${LABEL.statusColor[s.researchStatus]}`}),
+   h('div',null,h('strong',{text:s.cnName}),h('span',{class:'en',text:s.name}),h('span',{class:'place',text:`${s.city}${s.state?', '+s.state:''}`}),schoolTags(s,3)),
+   heartBtn(s.id,()=>{if(F.mark)renderExplore();}));
+  it.addEventListener('click',()=>select(s.id,true));
+  it.addEventListener('keydown',e=>{if(e.key==='Enter')select(s.id,true);});
+  root.append(it);
+ }
+ drawMarkers(list,fit);
+ const used=[...new Set(schools.filter(inScope).map(s=>s.researchStatus))];
+ $('legend').replaceChildren(...used.map(k=>h('span',null,h('span',{class:'dot',style:`background:${LABEL.statusColor[k]};margin:0`}),LABEL.status[k])));
+ $('legend').hidden=!used.length;
+ if(isWide())renderDetailInto($('detail-col'),selected);
+}
+const isWide=()=>window.matchMedia('(min-width:1200px)').matches;
+function select(id,fromList){
+ selected=id;renderExplore();
+ const s=S[id];if(map&&s&&fromList)map.panTo([s.lat,s.lng]);
+ if(!isWide())openDrawer(id);
+}
+function ensureMap(){
+ if(map){setTimeout(()=>map.invalidateSize(),0);return;}
+ if(!window.L){mapMsg('地图组件未加载，请检查网络后刷新。');return;}
+ map=L.map('map',{worldCopyJump:true}).setView([39,-96],4);
+ standardLayer=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
+ setTimeout(()=>map.invalidateSize(),0);
+}
+function drawMarkers(list,fit){
+ if(!map)return;
+ if(markerLayer)markerLayer.remove();
+ markerLayer=L.layerGroup().addTo(map);
+ for(const s of list){
+  const sel=s.id===selected;
+  const m=L.circleMarker([s.lat,s.lng],{radius:sel?11:8,color:'#fff',weight:2,fillColor:LABEL.statusColor[s.researchStatus],fillOpacity:.95})
+   .bindTooltip(s.cnName,{direction:'top',offset:[0,-6],permanent:sel});
+  m.on('click',()=>select(s.id,false));m.addTo(markerLayer);
+ }
+ if(fit){
+  map.invalidateSize();
+  if(!list.length)map.setView(scope==='global'?[20,10]:[39,-96],scope==='global'?2:4);
+  else map.fitBounds(L.latLngBounds(list.map(s=>[s.lat,s.lng])).pad(.08),{maxZoom:6});
+ }
+}
+let mapMode='standard',vectorLayer=null,sdkPromise=null,modeReq=0;
+function mapMsg(t){$('map-msg').textContent=t;$('map-msg').hidden=!t;}
+function loadSDK(){
+ if(sdkPromise)return sdkPromise;
+ const load=(url,css)=>new Promise((res,rej)=>{const el=document.createElement(css?'link':'script');if(css){el.rel='stylesheet';el.href=url;}else{el.src=url;el.async=true;}const t=setTimeout(()=>{el.remove();rej(new Error('timeout'));},20000);el.onload=()=>{clearTimeout(t);res();};el.onerror=()=>{clearTimeout(t);el.remove();rej(new Error('load'));};document.head.append(el);});
+ sdkPromise=(async()=>{await load('https://cdn.maptiler.com/maptiler-sdk-js/v4.1.0/maptiler-sdk.css',true);if(!window.maptilersdk)await load('https://cdn.maptiler.com/maptiler-sdk-js/v4.1.0/maptiler-sdk.umd.min.js');if(!L.maptiler)await load('https://cdn.maptiler.com/leaflet-maptilersdk/v4.1.0/leaflet-maptilersdk.umd.min.js');})().catch(e=>{sdkPromise=null;throw e;});
+ return sdkPromise;
+}
+async function switchMode(mode){
+ const req=++modeReq;if(!map)return;
+ const press=()=>document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===mapMode)));
+ if(mode==='standard'){if(vectorLayer){map.removeLayer(vectorLayer);vectorLayer=null;}if(!map.hasLayer(standardLayer))standardLayer.addTo(map);mapMode=mode;press();mapMsg('');return;}
+ if(mode===mapMode)return;
+ mapMsg('正在载入地图…');let cand=null;
+ try{
+  await loadSDK();if(req!==modeReq)return;
+  cand=L.maptiler.maptilerLayer({apiKey:MAPTILER_KEY,style:mode==='chinese'?'https://api.maptiler.com/maps/streets-v4/style.json':'https://api.maptiler.com/maps/hybrid/style.json',language:mode==='chinese'?maptilersdk.Language.CHINESE:maptilersdk.Language.ENGLISH});
+  await new Promise((res,rej)=>{const t=setTimeout(()=>rej(new Error('timeout')),20000);cand.once('ready',()=>{clearTimeout(t);res();});cand.addTo(map);cand.getMaptilerSDKMap().once('error',e=>{clearTimeout(t);rej(e.error||new Error('map'));});});
+  if(req!==modeReq){map.removeLayer(cand);return;}
+  if(vectorLayer)map.removeLayer(vectorLayer);if(map.hasLayer(standardLayer))map.removeLayer(standardLayer);
+  vectorLayer=cand;mapMode=mode;press();mapMsg('');
+ }catch(e){if(cand&&map.hasLayer(cand))map.removeLayer(cand);if(req===modeReq)mapMsg('这个地图暂时无法加载（本地预览时常见，网站上线后正常），已保留原地图。');}
+}
+document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>switchMode(b.dataset.mode)));
+
+/* detail */
+let detailTab='value';
+function openDrawer(id){$('drawer').hidden=false;$('backdrop').hidden=false;renderDetailInto($('drawer-body'),id);$('drawer').scrollTop=0;$('drawer-close').focus();}
+function closeDrawer(){$('drawer').hidden=true;$('backdrop').hidden=true;if(view==='mine')renderMine();else if(view==='compare')renderCompare();else renderExplore();}
+$('drawer-close').addEventListener('click',closeDrawer);$('backdrop').addEventListener('click',closeDrawer);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('drawer').hidden)closeDrawer();});
+const todo=t=>h('span',{class:'todo',text:t||'待研究'});
+const para=(title,text,cls)=>h('div',{class:'block '+(cls||'')},h('h4',{text:title}),text?h('p',{text}):h('p',null,todo()));
+const kv=rows=>h('table',{class:'kv'},h('tbody',null,rows.map(([k,v])=>h('tr',null,h('td',{text:k}),h('td',null,v==null||v===''?todo('待研究'):v)))));
+function renderDetailInto(container,id){
+ container.replaceChildren();
+ if(!id||!S[id]){container.append(h('div',{class:'placeholder'},h('h2',{text:'选择一所学校'}),'从左侧列表或地图上点一所学校，开始了解它的四年生活。'));return;}
+ const s=S[id],r=R[id];
+ const d=h('div',{class:'d'});container.append(d);
+ const hero=h('div',{class:'hero'});
+ if(s.heroImage){hero.append(h('img',{src:s.heroImage,alt:s.name}));if(s.heroImageCredit)hero.append(h('span',{class:'credit',text:s.heroImageCredit}));}
+ else hero.append(h('span',{class:'ghost',text:s.name}),h('span',{class:'place',text:`${s.city}${s.state?', '+s.state:''}`}));
+ d.append(hero);
+ d.append(h('div',{class:'card-top'},h('div',null,h('h2',{text:s.cnName}),h('div',{class:'en',text:s.name})),heartBtn(id)));
+ const facts=[LABEL.inst[s.institutionType]||s.institutionType,s.undergradEnrollment?`本科${s.undergradEnrollment}${s.undergradEnrollmentYear?'（'+s.undergradEnrollmentYear+'）':''}`:null,LABEL.setting[s.campusSetting]||s.campusSetting,s.region?LABEL.region[s.region]:null,LABEL.status[s.researchStatus]].filter(Boolean);
+ d.append(h('div',{class:'facts'},facts.map(f=>h('span',{text:f}))));
+ const rk=[s.rankings.usnewsNU&&`U.S. News 全国大学 #${s.rankings.usnewsNU}`,s.rankings.usnewsLAC&&`U.S. News 文理学院 #${s.rankings.usnewsLAC}`,s.rankings.qs&&`QS #${s.rankings.qs}`].filter(Boolean);
+ d.append(h('div',{class:'links'},s.officialUrl?h('a',{class:'btn',href:s.officialUrl,target:'_blank',rel:'noopener noreferrer',text:'官网 ↗'}):null,s.admissionsUrl?h('a',{class:'btn',href:s.admissionsUrl,target:'_blank',rel:'noopener noreferrer',text:'本科申请 ↗'}):null,compareBtn(id)));
+ if(rk.length)d.append(h('p',{class:'hint',style:'margin:-6px 0 12px',text:'2027 榜单：'+rk.join(' · ')}));
+ const head=r?(r.headline||firstSentence(r.value)):(s.howToStudy||'');
+ const q=r?(r.headlineQuestion||r.miraQuestion):'';
+ if(head||q)d.append(h('div',{class:'first'},head?h('p',{text:head}):null,q?h('p',{class:'q',text:'问问自己：'+q}):null));
+ const c=s.climate||{};
+ d.append(h('div',{class:'status-row'},
+  h('div',{class:'status'},h('small',{text:'录取位置（现在 → 目标）'}),h('b',{text:r&&r.admission?`${r.admission.current} → ${r.admission.target}`:'待研究'})),
+  h('div',{class:'status'},h('small',{text:'学校状态'}),h('b',{text:r&&r.health?LABEL.health[r.health.level]:'待研究'})),
+  h('div',{class:'status'},h('small',{text:'冬天'}),h('b',{text:c.band?`${LABEL.band[c.band]} · 约 ${c.coldMonthMeanC}°C`:'待补'}))));
+ if(!r){d.append(h('div',{class:'block'},h('h4',{text:'本科怎么学'}),s.howToStudy?h('p',{text:s.howToStudy}):h('p',null,todo('待补'))),h('p',{class:'hint',text:'这所学校还没有进入研究池，只有基础信息。'}),mineBox(id));return;}
+ const tabs=[['value','值得看与注意'],['learn','怎么学'],['synth','综合者训练'],['paths','学习组合'],['adm','录取位置'],['life','校园与状态']];
+ const bar=h('div',{class:'dtabs',role:'tablist'});const body=h('div');
+ const show=k=>{detailTab=k;for(const b of bar.children)b.setAttribute('aria-selected',String(b.dataset.k===k));body.replaceChildren(...TAB[k](s,r));};
+ for(const [k,t] of tabs){const b=h('button',{role:'tab','data-k':k,text:t});b.addEventListener('click',()=>show(k));bar.append(b);}
+ d.append(bar,body);show(detailTab);
+ d.append(mineBox(id));
+}
+const TAB={
+ value:(s,r)=>[para('值得看的地方',r.value,'good'),para('需要注意的地方',r.tradeoff,'warn'),para('Mira 可以想一想',r.miraQuestion),para('以后能怎么走',r.career)],
+ learn:(s,r)=>[
+  para('学习路径（制度事实）',r.learningPath),
+  h('div',{class:'block'},h('h4',{text:'可以先关注的专业'}),r.focusMajors.length?h('div',{class:'tags',style:'margin-bottom:8px'},r.focusMajors.map(m=>h('span',{class:'tag',text:m}))):null,r.majorNote?h('p',{text:r.majorNote}):h('p',null,todo())),
+  para('转方向与跨学科组合的空间',r.flexibility)],
+ synth:(s,r)=>{
+  const out=[h('p',{class:'hint',style:'margin-top:0',text:'"综合者"：一门扎实的方法 + 跨领域连接。每一项只写查到的事实，并标明证据程度。'})];
+  for(const k of Object.keys(LABEL.synth)){
+   const it=r.synthesizer[k]||{evidence:'none'};
+   out.push(h('div',{class:'block'},h('h4',null,LABEL.synth[k],h('span',{class:'ev '+it.evidence,text:LABEL.ev[it.evidence]})),
+    it.text?h('p',{text:it.text}):h('p',null,todo('还没有查到具体证据。')),
+    h('p',{class:'hint',style:'margin-top:4px',text:LABEL.synthHint[k]}),
+    it.source?h('a',{class:'src',href:it.source,target:'_blank',rel:'noopener noreferrer',text:'来源 ↗'}):null));
+  }
+  if(r.synthesizer.summary)out.push(para('一句话',r.synthesizer.summary,'good'));
+  return out;
+ },
+ paths:(s,r)=>{
+  const out=[h('p',{class:'hint',style:'margin-top:0',text:'只是可能的组合，不代表现在需要决定。每条组合都要先在课程目录里核实。'})];
+  if(!r.pathways.length)out.push(h('div',{class:'block'},h('p',null,todo('待研究：核实课程目录后补充 2–3 条组合。'))));
+  for(const p of r.pathways)out.push(h('div',{class:'block'},h('h4',{text:p.title}),h('p',{text:p.parts.join(' ＋ ')}),p.source?h('a',{class:'src',href:p.source,target:'_blank',rel:'noopener noreferrer',text:'课程目录 ↗'}):null));
+  return out;
+ },
+ adm:(s,r)=>{
+  const a=r.admission||{};
+  return [kv([
+   [`现在（GPA ${profile.gpa} · SAT ${profile.sat} · TOEFL ${profile.toefl}）`,a.current],
+   [`如果达到 SAT ${profile.satTarget} · TOEFL ${profile.toeflTarget}`,a.target],
+   [`SAT ${profile.sat} 送不送`,a.sat1380],
+   ['依据',a.basis],
+   ['核实情况',a.verified?'已对照学校或官方数据':'ChatGPT 整理，待核实']]),
+   h('p',{class:'hint',style:'margin-top:10px',text:'五档：远距离冲刺 / 冲刺 / 匹配偏冲 / 匹配 / 匹配偏稳。"匹配偏稳"不等于保底。成绩变化后需要重新判断。'})];
+ },
+ life:(s,r)=>{
+  const L_=r.miraLens||{},e=r.experience||{},c=s.climate||{},hl=r.health||{};
+  const pct=v=>v==null?null:v+'%';
+  return [
+   h('div',{class:'block'},h('h4',{text:'四个视角'}),kv([['起步支持',L_.start],['节奏与压力',L_.pace],['社交结构',L_.social],['与她主线的连接',L_.thread]])),
+   h('div',{class:'block'},h('h4',{text:'数据'}),kv([['新生留存率',pct(e.retention)],['4 年 / 6 年毕业率',e.grad4!=null?`${e.grad4}% / ${e.grad6}%`:null],['师生比',e.studentFaculty],['兄弟会 / 姐妹会',e.fraternity!=null?`${e.fraternity}% / ${e.sorority}%`:null]]),e.note?h('p',{style:'margin-top:8px',text:e.note}):null),
+   h('div',{class:'block'},h('h4',{text:'冬天'}),h('p',{text:c.band?`最冷月日平均约 ${c.coldMonthMeanC}°C（${LABEL.band[c.band]}，约数，待官方核实）。${c.note?c.note+'。':''}${c.outOfScope?'不在 Mira 的选校范围。':''}`:'待补'})),
+   h('details',{class:'block'},h('summary',{style:'cursor:pointer;font-weight:600',text:`学校状态：${LABEL.health[hl.level]||'待研究'}`}),hl.note?h('p',{style:'margin-top:8px',text:hl.note}):null,hl.checked?h('p',{class:'hint',text:'核查日期：'+hl.checked}):null)];
+ }
+};
+function mineBox(id){
+ const cur=me.marks[id]||{};
+ const box=h('div',{class:'mine-box'},h('h4',{text:'Mira 自己的判断'}));
+ const chips=h('div',{class:'chips'});
+ const status=h('small',{text:'只保存在这台设备的浏览器里，可在右上角"我的笔记"导出。'});
+ for(const [k,t] of Object.entries(LABEL.mark)){
+  const b=h('button',{class:'chip','aria-pressed':String(cur.mark===k),text:t});
+  b.addEventListener('click',()=>{const on=markOf(id)!==k;setMark(id,{mark:on?k:''});for(const x of chips.children)x.setAttribute('aria-pressed','false');b.setAttribute('aria-pressed',String(on));status.textContent='已保存';});
+  chips.append(b);
+ }
+ const mi=h('input',{type:'text',placeholder:'现在最想看的专业，例如 Psychology + Data，或还没想好',value:cur.majorInterest||''});
+ const note=h('textarea',{placeholder:'记录你的想法、感受或问题……'});note.value=cur.note||'';
+ mi.addEventListener('input',()=>{status.textContent=setMark(id,{majorInterest:mi.value})?'已保存':'浏览器暂时无法保存';});
+ note.addEventListener('input',()=>{status.textContent=setMark(id,{note:note.value})?'已保存':'浏览器暂时无法保存';});
+ box.append(chips,mi,note,status);return box;
+}
+
+/* compare */
+function renderCompare(){
+ const root=$('view-compare');root.replaceChildren();
+ root.append(h('h2',{style:'margin:0',text:'学校对比'}),h('p',{class:'hint',text:'选 2–3 所学校，把同一个问题放在一起看。这里不给总分，由你自己判断。'}));
+ const pick=h('div',{class:'cmp-pick'});
+ const opts=[...schools].sort((a,b)=>(R[a.id]?0:1)-(R[b.id]?0:1)||a.cnName.localeCompare(b.cnName,'zh'));
+ for(let i=0;i<3;i++){
+  const sel=h('select',{'aria-label':`学校 ${i+1}`});sel.append(new Option(i===2?'学校 3（可选）':`学校 ${i+1}`,''));
+  for(const s of opts)sel.append(new Option(s.cnName,s.id,false,me.compare[i]===s.id));
+  sel.addEventListener('change',()=>{const ids=[...pick.querySelectorAll('select')].map(x=>x.value).filter(Boolean);me.compare=[...new Set(ids)].slice(0,3);save();renderCompare();});
+  pick.append(sel);
+ }
+ root.append(pick);
+ const ids=me.compare.filter(id=>S[id]);
+ if(ids.length<2){root.append(h('p',{class:'empty-note',text:'请至少选两所不同的学校。也可以在学校卡片或详情里点"加入对比"。'}));return;}
+ const cell=(id,fn)=>{const s=S[id],r=R[id];const v=r?fn(s,r):null;return v==null||v===''?todo(r?'待研究':'未进入研究池'):v;};
+ const ev=k=>(s,r)=>{const it=r.synthesizer[k];return it&&it.evidence!=='none'?`${LABEL.ev[it.evidence]}：${it.text}`:null;};
+ const rows=[
+  ['这所学校的特点',(s,r)=>r.headline||firstSentence(r.value)],
+  ['转方向与组合空间',(s,r)=>r.flexibility],
+  ['跨领域真实问题',ev('realProblems')],['跨领域资源',ev('crossResources')],['方法训练',ev('methods')],['表达训练',ev('expression')],
+  ['起步支持',(s,r)=>r.miraLens.start],
+  ['校园规模',s=>[LABEL.size[s.size],s.undergradEnrollment].filter(Boolean).join(' · ')],
+  ['兄弟会 / 姐妹会',(s,r)=>r.experience.fraternity!=null?`${r.experience.fraternity}% / ${r.experience.sorority}%`:null],
+  ['冬天',s=>s.climate?`${LABEL.band[s.climate.band]} · 约 ${s.climate.coldMonthMeanC}°C`:null],
+  ['当前录取位置',(s,r)=>r.admission&&r.admission.current],
+  [`SAT ${profile.satTarget} 后`,(s,r)=>r.admission&&r.admission.target],
+  ['学校状态',(s,r)=>r.health&&LABEL.health[r.health.level]],
+  ['全年总花费',s=>s.costOfAttendanceUSD?`约 $${s.costOfAttendanceUSD.toLocaleString()}`:null]
+ ];
+ root.append(h('div',{class:'cmp-wrap'},h('table',{class:'cmp'},
+  h('thead',null,h('tr',null,h('th',null),ids.map(id=>h('th',null,h('a',{href:'#',text:S[id].cnName,onclick:e=>{e.preventDefault();openDrawer(id);}}))))),
+  h('tbody',null,rows.map(([label,fn])=>h('tr',null,h('th',{text:label}),ids.map(id=>h('td',null,cell(id,fn)))))))));
+}
+
+/* notes export / import */
+$('notes-btn').addEventListener('click',e=>{e.stopPropagation();const p=$('notes-pop');p.hidden=!p.hidden;$('notes-btn').setAttribute('aria-expanded',String(!p.hidden));});
+document.addEventListener('click',e=>{if(!e.target.closest('.menu'))$('notes-pop').hidden=true;});
+$('export-btn').addEventListener('click',()=>{
+ const blob=new Blob([JSON.stringify({app:'mira-2027',version:3,exported:new Date().toISOString(),marks:me.marks,compare:me.compare},null,2)],{type:'application/json'});
+ const a=h('a',{href:URL.createObjectURL(blob),download:`Mira选校笔记-${new Date().toISOString().slice(0,10)}.json`});document.body.append(a);a.click();a.remove();
+});
+$('import-file').addEventListener('change',async e=>{
+ const f=e.target.files[0];if(!f)return;
+ try{
+  const d=JSON.parse(await f.text());
+  if(!d||d.app!=='mira-2027'||typeof d.marks!=='object')throw new Error('bad');
+  for(const [id,v] of Object.entries(d.marks)){const cur=me.marks[id];if(!cur||String(v.updated||'')>String(cur.updated||''))me.marks[id]=v;}
+  if(Array.isArray(d.compare)&&!me.compare.length)me.compare=d.compare.slice(0,3);
+  save();alert('已导入笔记。');go(view);
+ }catch(_){alert('这个文件不是 Mira 选校笔记，无法导入。');}
+ e.target.value='';$('notes-pop').hidden=true;
+});
+
+window.addEventListener('resize',()=>{if(map)map.invalidateSize();if(mineMap)mineMap.invalidateSize();});
+const start=(location.hash||'').slice(1);
+go(['mine','us','global','compare'].includes(start)?start:'mine');
 </script>
 </body>
 </html>

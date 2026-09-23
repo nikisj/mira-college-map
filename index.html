@@ -337,10 +337,12 @@ function schoolTags(s,max=4){
   if(r.admission)out.push(h('span',{class:'tag adm',text:'录取：'+r.admission.current}));
   if(r.health&&r.health.level!=='stable')out.push(h('span',{class:'tag '+r.health.level,text:r.health.level==='watch'?'● 需要观察':'● 较大调整'}));
  }
+ if(!r){const k=s.rankings||{};const t=k.usnewsNU?`U.S. News 大学 #${k.usnewsNU}`:k.usnewsLAC?`U.S. News 文理 #${k.usnewsLAC}`:k.qs?`QS #${k.qs}`:null;if(t)out.push(h('span',{class:'tag adm',text:t}));}
  if(s.climate&&s.climate.outOfScope)out.push(h('span',{class:'tag cold',text:'气候：不在选校范围'}));
  if(s.stemTag)out.push(h('span',{class:'tag adm',text:'STEM 取向强'}));
  return h('div',{class:'tags'},out.slice(0,max));
 }
+const placeOf=s=>s.country==='US'?`${s.city}, ${s.state}`:`${s.city} · ${s.country}`;
 const metaLine=s=>[s.country==='US'?s.state:s.country,pubPriv(s),LABEL.kind[s.kind]].filter(Boolean).join(' · ');
 
 /* views */
@@ -486,7 +488,7 @@ function renderExplore(fit){
  for(const s of list){
   const it=h('div',{class:'item',role:'option','aria-selected':String(selected===s.id),tabindex:'0'},
    h('span',{class:'dot',style:`background:${LABEL.statusColor[s.researchStatus]}`}),
-   h('div',null,h('strong',{text:s.cnName}),h('span',{class:'en',text:s.name}),h('span',{class:'place',text:`${s.city}${s.state?', '+s.state:''}`}),schoolTags(s,3)),
+   h('div',null,h('strong',{text:s.cnName}),h('span',{class:'en',text:s.name}),h('span',{class:'place',text:placeOf(s)}),schoolTags(s,3)),
    heartBtn(s.id,()=>{if(F.mark)renderExplore();}));
   it.addEventListener('click',()=>select(s.id,true));
   it.addEventListener('keydown',e=>{if(e.key==='Enter')select(s.id,true);});
@@ -568,7 +570,7 @@ function renderDetailInto(container,id){
  const d=h('div',{class:'d'});container.append(d);
  const hero=h('div',{class:'hero'});
  if(s.heroImage){hero.append(h('img',{src:s.heroImage,alt:s.name}));if(s.heroImageCredit)hero.append(h('span',{class:'credit',text:s.heroImageCredit}));}
- else hero.append(h('span',{class:'ghost',text:s.name}),h('span',{class:'place',text:`${s.city}${s.state?', '+s.state:''}`}));
+ else hero.append(h('span',{class:'ghost',text:s.name}),h('span',{class:'place',text:placeOf(s)}));
  d.append(hero);
  d.append(h('div',{class:'card-top'},h('div',null,h('h2',{text:s.cnName}),h('div',{class:'en',text:s.name})),heartBtn(id)));
  const facts=[LABEL.inst[s.institutionType]||s.institutionType,s.undergradEnrollment?`本科${s.undergradEnrollment}${s.undergradEnrollmentYear?'（'+s.undergradEnrollmentYear+'）':''}`:null,LABEL.setting[s.campusSetting]||s.campusSetting,s.region?LABEL.region[s.region]:null,LABEL.status[s.researchStatus]].filter(Boolean);

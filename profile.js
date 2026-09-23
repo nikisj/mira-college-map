@@ -3,6 +3,7 @@
 const profile = {
   gpa: 3.8, sat: 1380, satTarget: 1480, toefl: 5, toeflTarget: 5.5,
   direction: '社会科学 + 跨学科',
+  careerDirection: '经济 · 传媒 · 跨学科 · 咨询',
   goal: 'T 型综合者：一门扎实的方法 + 跨领域连接',
   goalNote: '一个懂得利用各个领域专家能力的“综合者”',
   updated: '2026-09-23'

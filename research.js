@@ -11,14 +11,14 @@ const research = [
   "value": "这里的优势，是老师更容易真正认识学生。学习、做项目和想未来这几件事，也比较容易连起来。对需要一点带领、进入状态后会认真投入的 Mira，这种环境值得看。",
   "tradeoff": "我最想确认的是社交。如果不参加 Greek life，她能不能自然找到自己的朋友，周末也有舒服的生活？已知事实：Greek 没有住宿楼，最早第二学期才能加入，姐妹会参与约 17%。",
   "miraQuestion": "如果不参加 Greek life，我能不能在这里过得自在，也有稳定的朋友圈？",
-  "career": "经济、领导力、心理这些方向，都能接到分析、咨询、研究或知识服务类工作。",
+  "career": "经济、PPEL、领导力这些方向，都能接到分析、咨询、研究或公共事务类工作。",
   "learningPath": "",
   "focusMajors": [
    "Economics",
-   "Psychology",
+   "Philosophy, Politics, Economics & Law (PPEL)",
    "Leadership Studies"
   ],
-  "majorNote": "可以先从人的选择、行为和群体中的领导关系看起。经济学和心理学都有文理学院路径；Leadership Studies 属于 Jepson，不能把跨学院组合等同于无条件转入。",
+  "majorNote": "可以从经济学的方法、PPEL 的跨学科视角，以及群体中的领导关系三个角度看起。Leadership Studies 属于 Jepson 学院，跨学院组合不等于无条件转入。",
   "flexibility": "社科之间组合空间不错，还有 PPEL（哲学、政治、经济与法律）这种跨学科专业。Jepson 领导力学院和 Robins 商学院都有各自的要求，要提前看。",
   "synthesizer": {
    "realProblems": {
@@ -91,12 +91,12 @@ const research = [
   "career": "经济学和社区项目都能积累研究、分析和协作经验，对以后走研究、咨询、公共事务都有帮助。",
   "learningPath": "",
   "focusMajors": [
-   "Psychology",
    "Economics",
-   "Sociology"
+   "Sociology",
+   "International Studies"
   ],
-  "majorNote": "可以从一个人的行为，看到更大的经济和社会环境。心理系明确列出与经济、社会学等方向双主修或辅修的学生，值得继续看课程怎么搭配。",
-  "flexibility": "心理、经济、社会学、国际研究之间常见双主修或主辅修组合；International Studies 要求一个 5 门课的学科方向，可以顺势发展成第二专业。学校没有传统商学院。",
+  "majorNote": "可以从一个社会问题出发，放进经济、社会学和国际研究三个视角里看。International Studies 要求一个 5 门课的学科方向，可以顺势发展成第二专业。",
+  "flexibility": "经济、社会学、国际研究之间常见双主修或主辅修组合；International Studies 要求一个 5 门课的学科方向，可以顺势发展成第二专业。学校没有传统商学院。",
   "synthesizer": {
    "realProblems": {
     "text": "",
@@ -170,7 +170,7 @@ const research = [
    "Global Commerce",
    "Data Analytics"
   ],
-  "majorNote": "Journalism 是 2021 年新开的专业，和她做学生记者、采访的经历最直接相关。一个看商业如何跨越文化，另一个用数据追问实际问题。Data Analytics 可以把心理等领域作为研究方向，但数学、计算机课程和实习都要认真安排。",
+  "majorNote": "Journalism 是 2021 年新开的专业，和她做学生记者、采访的经历最直接相关。Global Commerce 看商业如何跨越文化，Data Analytics 用数据追问实际问题；数据分析需要认真安排数学、计算机课程和实习。",
   "flexibility": "新闻、传播、数据分析、全球商业都是本科专业，可以组合，但 Data Analytics 和 Global Commerce 有自己的先修课，要提前安排。",
   "synthesizer": {
    "realProblems": {
@@ -318,11 +318,10 @@ const research = [
   "career": "毕业研究本身就是一份很有分量的作品，再加上导师推荐和职业支持，比较适合走研究、分析和知识型工作。",
   "learningPath": "",
   "focusMajors": [
-   "Psychology",
    "Sociology",
    "Economics"
   ],
-  "majorNote": "先看自己更想研究个人、群体，还是经济生活。学校允许组合主辅修；也值得想一想，什么问题能让自己愿意做一整年的独立研究。",
+  "majorNote": "先看自己更想研究群体和社会，还是经济生活。学校允许组合主辅修；也值得想一想，什么问题能让自己愿意做一整年的独立研究。",
   "flexibility": "方向可以换，也有学生自己设计专业的先例。越晚改，前面的方法课越难接上后面的毕业研究。",
   "synthesizer": {
    "realProblems": {
@@ -394,7 +393,6 @@ const research = [
   "learningPath": "",
   "focusMajors": [
    "Economics",
-   "Psychology",
    "Sociology/Anthropology"
   ],
   "majorNote": "这几扇门都围绕人，但问问题的方法不同。可以先试基础课；如果更喜欢数量分析，再留意 Quantitative Economics，它比 Economics 多一些数学和定量研究要求。",
@@ -468,11 +466,10 @@ const research = [
   "career": "研究、创作和跨学科项目都能变成自己的作品和经历，对研究、内容、创意、咨询类方向都有价值。",
   "learningPath": "",
   "focusMajors": [
-   "Psychology",
    "Sociology",
    "Economics"
   ],
-  "majorNote": "可以把对人的好奇放进心理、社会和经济三个视角里试一试。这些都是文理学院的方向；先比较课程和研究问题，不急着决定双主修。",
+  "majorNote": "可以把对社会的好奇放进社会学和经济学两个视角里试一试；学校还有 Journalism、International Affairs 等整合方向，可以和主修并行。",
   "flexibility": "10 个 Integrative Concentration 可以和主修并行，把课程和实践连起来；也有正式的 Individual Major。文理学院和音乐学院之间不能默认想转就转。",
   "synthesizer": {
    "realProblems": {
@@ -546,11 +543,11 @@ const research = [
   "career": "本科有自己的职业中心和专业路径，研究、分析、商业方向都能接，不需要借用研究生商学院的资源来证明自己。",
   "learningPath": "",
   "focusMajors": [
-   "Psychology",
    "Economics",
+   "Political Science",
    "Data Science"
   ],
-  "majorNote": "可以先问自己：更喜欢解释人的行为，还是用数据检验一个想法？这三项都有本科专业；如果考虑组合，先看数学、统计和课程安排是否适合自己。",
+  "majorNote": "可以先问自己：更喜欢分析经济和政策问题，还是用数据检验一个想法？这些都有本科专业；如果考虑组合，先看数学、统计和课程安排是否适合自己。",
   "flexibility": "课表非常开放，除写作外没有统一必修，但要在另外两大领域各修一组课，社科之间很好组合。还有 Take Five 项目可以免学费多读一年。本科 Business 的数学和先修课不能绕过去。",
   "synthesizer": {
    "realProblems": {
@@ -697,9 +694,9 @@ const research = [
   "focusMajors": [
    "Public Policy",
    "Economics",
-   "Psychology"
+   "International Relations"
   ],
-  "majorNote": "公共政策把经济、政府和社会问题放在一起，适合从一个真实问题开始看课程。它包含定量与经济分析；如果更喜欢人的行为，也可以先了解心理学。",
+  "majorNote": "公共政策把经济、政府和社会问题放在一起，适合从一个真实问题开始看课程。它包含定量与经济分析；如果更关心国际议题，也可以了解国际关系。",
   "flexibility": "文理学院里探索比较自由，COLL 课程体系从大一到毕业都在训练跨学科思考；还有正式的自主设计跨学科专业。想读 Mason 商学院要单独申请。",
   "synthesizer": {
    "realProblems": {
@@ -774,11 +771,11 @@ const research = [
   "learningPath": "",
   "focusMajors": [
    "Economics",
-   "Psychology",
-   "Communication"
+   "Communication",
+   "Politics and International Affairs"
   ],
   "majorNote": "可以从人的选择、行为和表达三个角度试课。学院允许双主修，但要得到两个系同意，并分别完成要求；课程不能默认重复计入。",
-  "flexibility": "经济、心理、传播可以组合，还有新闻辅修和面向全校的跨学科辅修。双主修要两个系都同意。商学院要另外申请，达到最低条件也不保证录取。",
+  "flexibility": "经济、传播、政治与国际事务可以组合，还有新闻辅修和面向全校的跨学科辅修。双主修要两个系都同意。商学院要另外申请，达到最低条件也不保证录取。",
   "synthesizer": {
    "realProblems": {
     "text": "",
@@ -851,12 +848,11 @@ const research = [
   "career": "有实习课程和经济学职业支持，但国际生到底能用到哪些机会，还要继续核。",
   "learningPath": "",
   "focusMajors": [
-   "Psychology",
    "Sociology",
    "International Development and Social Change"
   ],
-  "majorNote": "可以先看心理、社会关系，以及发展和社会变化这些问题，哪一种最让自己想追问。三项都有本科专业；是否组合，等看过课程再决定。",
-  "flexibility": "International Development and Social Change 本身就是跨学科专业，和社会学、心理都容易搭配。数据、管理方向好不好转，还要继续核实。",
+  "majorNote": "可以先看社会关系，以及发展和社会变化这些问题，哪一种最让自己想追问。两项都有本科专业；是否组合，等看过课程再决定。",
+  "flexibility": "International Development and Social Change 本身就是跨学科专业，和社会学容易搭配。数据、管理方向好不好转，还要继续核实。",
   "synthesizer": {
    "realProblems": {
     "text": "",
@@ -926,11 +922,11 @@ const research = [
   "career": "项目经历能积累团队协作、分析和解决问题的能力，对咨询、商业和项目型工作都比较实用。",
   "learningPath": "",
   "focusMajors": [
-   "Psychology",
    "Economics",
-   "Sociology & Anthropology"
+   "Sociology & Anthropology",
+   "Journalism"
   ],
-  "majorNote": "先看看自己更想理解个人、市场，还是群体和文化。这些方向都在文理学院的本科清单里，不必一开始就把探索收窄到商学院。",
+  "majorNote": "先看看自己更想理解市场、群体和文化，还是做报道和公共表达。这些方向都在文理学院的本科清单里，不必一开始就把探索收窄到商学院。",
   "flexibility": "文理学院内部可以组合社科和传播类方向；Mountaintop 等项目让不同专业的学生一起做真实问题。转 Business 有明确的成绩、学分和先修要求，还受课程容量影响。",
   "synthesizer": {
    "realProblems": {
@@ -1154,11 +1150,10 @@ const research = [
   "career": "校内工作和培训能帮助学生较早积累经验，但有资格要求，不是每个人都能直接参加。",
   "learningPath": "",
   "focusMajors": [
-   "Psychology",
    "Economics",
    "Computational Social Science"
   ],
-  "majorNote": "可以先比较研究人的行为、经济问题和用计算方法研究社会这三种路。它们都有 Dietrich 本科专业；对计算社会科学有兴趣时，也要看看自己是否喜欢编程和定量方法。",
+  "majorNote": "可以先比较研究经济问题和用计算方法研究社会这两种路。它们都有 Dietrich 本科专业；对计算社会科学有兴趣时，也要看看自己是否喜欢编程和定量方法。",
   "flexibility": "社科专业很多，Computational Social Science 可以把社科和计算方法结合起来。转商学院有明确的学分、GPA 和先修课要求。",
   "synthesizer": {
    "realProblems": {
@@ -1226,7 +1221,7 @@ const research = [
   "value": "学科很多，社科内部的选择也丰富，而且学院本身有职业支持，不一定非要靠商学院。",
   "tradeoff": "Isenberg 商学院有给在校生的内部申请通道，但要先修完指定的先修课，而且有竞争，不能当成一定能转进去的后备方案。学校规模很大，很多事情要自己主动去找。",
   "miraQuestion": "如果最后没有进商学院，只读社科，我还会喜欢在这里的四年吗？",
-  "career": "社科学院有自己的职业路径，心理学也有带研讨的本科研究项目。",
+  "career": "社科学院有自己的职业路径，经济学等专业也有本科研究机会。",
   "learningPath": "",
   "focusMajors": [
    "Economics",
@@ -1805,7 +1800,13 @@ const research = [
    "summary": ""
   },
   "pathways": [],
-  "admission": null,
+  "admission": {
+   "current": "匹配",
+   "target": "匹配",
+   "sat1380": "不看 SAT",
+   "basis": "加州大学不看 SAT/ACT。2025 秋季国际生录取率约 57%，州外约 63%，整体约 45%（College Kickstart 整理自 UC 官方数据）。",
+   "verified": false
+  },
   "health": null,
   "miraLens": {
    "start": "",
@@ -1859,7 +1860,13 @@ const research = [
    "summary": ""
   },
   "pathways": [],
-  "admission": null,
+  "admission": {
+   "current": "匹配偏冲",
+   "target": "匹配偏冲",
+   "sat1380": "不看 SAT",
+   "basis": "加州大学不看 SAT/ACT。2025 秋季整体录取率约 29%，州外约 48%；国际生录取率历来高于加州本地生（第三方整理，待核）。",
+   "verified": false
+  },
   "health": null,
   "miraLens": {
    "start": "",
@@ -1913,7 +1920,13 @@ const research = [
    "summary": ""
   },
   "pathways": [],
-  "admission": null,
+  "admission": {
+   "current": "匹配",
+   "target": "匹配",
+   "sat1380": "不看 SAT",
+   "basis": "加州大学不看 SAT/ACT。2025 秋季国际生录取率约 48%，州外约 55%，整体约 38%（College Kickstart 整理自 UC 官方数据）。",
+   "verified": false
+  },
   "health": null,
   "miraLens": {
    "start": "",
@@ -1967,7 +1980,13 @@ const research = [
    "summary": ""
   },
   "pathways": [],
-  "admission": null,
+  "admission": {
+   "current": "冲刺",
+   "target": "冲刺",
+   "sat1380": "不看 SAT",
+   "basis": "加州大学不看 SAT/ACT。2025 秋季国际生录取率约 31%，州外约 39%，整体约 28%（College Kickstart 整理自 UC 官方数据）。",
+   "verified": false
+  },
   "health": null,
   "miraLens": {
    "start": "",
@@ -2021,7 +2040,13 @@ const research = [
    "summary": ""
   },
   "pathways": [],
-  "admission": null,
+  "admission": {
+   "current": "匹配偏冲",
+   "target": "匹配",
+   "sat1380": "倾向不交",
+   "basis": "2028 届整体录取约 39%，州外约 36%；SAT 中段 1333–1500，但提交成绩的学生不到两成（College Transitions 整理，国际生数据待核）。",
+   "verified": false
+  },
   "health": null,
   "miraLens": {
    "start": "",
@@ -2075,7 +2100,13 @@ const research = [
    "summary": ""
   },
   "pathways": [],
-  "admission": null,
+  "admission": {
+   "current": "冲刺",
+   "target": "匹配偏冲",
+   "sat1380": "不交",
+   "basis": "2028 届整体录取约 44%，州外约 42%；SAT 中段 1410–1520（College Transitions 整理，国际生数据待核）。",
+   "verified": false
+  },
   "health": null,
   "miraLens": {
    "start": "",
@@ -2129,7 +2160,13 @@ const research = [
    "summary": ""
   },
   "pathways": [],
-  "admission": null,
+  "admission": {
+   "current": "匹配",
+   "target": "匹配偏稳",
+   "sat1380": "可以交",
+   "basis": "录取约 58%（68,614 人申请）；SAT 中段约为阅读写作 650–730、数学 660–770（Common Data Set）。",
+   "verified": true
+  },
   "health": null,
   "miraLens": {
    "start": "",
@@ -2138,10 +2175,10 @@ const research = [
    "thread": ""
   },
   "experience": {
-   "retention": null,
+   "retention": 93,
    "grad4": null,
-   "grad6": null,
-   "studentFaculty": null,
+   "grad6": 84,
+   "studentFaculty": "16:1",
    "fraternity": null,
    "sorority": null,
    "note": ""
@@ -2183,7 +2220,13 @@ const research = [
    "summary": ""
   },
   "pathways": [],
-  "admission": null,
+  "admission": {
+   "current": "匹配",
+   "target": "匹配偏稳",
+   "sat1380": "可以交",
+   "basis": "2025–26 年录取约 49%；SAT 中段 1300–1440（Common Data Set）。",
+   "verified": true
+  },
   "health": null,
   "miraLens": {
    "start": "",
@@ -2192,10 +2235,10 @@ const research = [
    "thread": ""
   },
   "experience": {
-   "retention": null,
+   "retention": 94,
    "grad4": null,
-   "grad6": null,
-   "studentFaculty": null,
+   "grad6": 88,
+   "studentFaculty": "16:1",
    "fraternity": null,
    "sorority": null,
    "note": ""
@@ -2237,7 +2280,13 @@ const research = [
    "summary": ""
   },
   "pathways": [],
-  "admission": null,
+  "admission": {
+   "current": "远距离冲刺",
+   "target": "冲刺",
+   "sat1380": "不交",
+   "basis": "2025–26 年整体录取约 13%，常规轮约 11%，ED 约 31%；SAT 中段 1420–1510（Common Data Set）。ED 优势明显。",
+   "verified": true
+  },
   "health": null,
   "miraLens": {
    "start": "",
@@ -2246,10 +2295,10 @@ const research = [
    "thread": ""
   },
   "experience": {
-   "retention": null,
-   "grad4": null,
-   "grad6": null,
-   "studentFaculty": null,
+   "retention": 95,
+   "grad4": 75,
+   "grad6": 89,
+   "studentFaculty": "10:1",
    "fraternity": null,
    "sorority": null,
    "note": ""
@@ -2291,7 +2340,13 @@ const research = [
    "summary": ""
   },
   "pathways": [],
-  "admission": null,
+  "admission": {
+   "current": "远距离冲刺",
+   "target": "远距离冲刺",
+   "sat1380": "不交",
+   "basis": "2024–25 年整体录取约 5%，ED 约 43%、其他轮约 4%；SAT 中段 1450–1520（Common Data Set）。另有大一在海外校区就读的 N.U.in 入口。",
+   "verified": true
+  },
   "health": null,
   "miraLens": {
    "start": "",
@@ -2300,10 +2355,10 @@ const research = [
    "thread": ""
   },
   "experience": {
-   "retention": null,
+   "retention": 97,
    "grad4": null,
-   "grad6": null,
-   "studentFaculty": null,
+   "grad6": 91,
+   "studentFaculty": "16:1",
    "fraternity": null,
    "sorority": null,
    "note": ""
@@ -2345,7 +2400,13 @@ const research = [
    "summary": ""
   },
   "pathways": [],
-  "admission": null,
+  "admission": {
+   "current": "远距离冲刺",
+   "target": "冲刺",
+   "sat1380": "不交",
+   "basis": "2024–25 年录取约 11%；SAT 中段 1480–1540（Common Data Set）。",
+   "verified": true
+  },
   "health": null,
   "miraLens": {
    "start": "",
@@ -2354,10 +2415,10 @@ const research = [
    "thread": ""
   },
   "experience": {
-   "retention": null,
-   "grad4": null,
-   "grad6": null,
-   "studentFaculty": null,
+   "retention": 96,
+   "grad4": 81,
+   "grad6": 91,
+   "studentFaculty": "10:1",
    "fraternity": null,
    "sorority": null,
    "note": ""
@@ -2399,7 +2460,13 @@ const research = [
    "summary": ""
   },
   "pathways": [],
-  "admission": null,
+  "admission": {
+   "current": "远距离冲刺",
+   "target": "远距离冲刺",
+   "sat1380": "不交",
+   "basis": "2025–26 年录取约 9%（约 11.4 万人申请）；SAT 中段 1480–1550（Common Data Set）。",
+   "verified": true
+  },
   "health": null,
   "miraLens": {
    "start": "",
@@ -2408,10 +2475,10 @@ const research = [
    "thread": ""
   },
   "experience": {
-   "retention": null,
-   "grad4": null,
-   "grad6": null,
-   "studentFaculty": null,
+   "retention": 96,
+   "grad4": 74,
+   "grad6": 88,
+   "studentFaculty": "8:1",
    "fraternity": null,
    "sorority": null,
    "note": ""

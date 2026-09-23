@@ -55,11 +55,12 @@ main{flex:1;min-height:0}
 .btn.primary{background:var(--green);color:#fff;border-color:var(--green)}
 .heart{border:0;background:transparent;font-size:19px;line-height:1;color:#cfd3cf;padding:4px}
 .heart[aria-pressed="true"]{color:#c0584f}
-.overview{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;background:var(--green);color:#fff;border-radius:var(--r);padding:20px 24px;margin-bottom:10px}
-.overview div small{display:block;opacity:.72;font-size:12px;margin-bottom:4px}
-.overview div b{font-weight:600;font-size:15px;line-height:1.45}
-.overview .goal-note{display:block;margin-top:6px;font-size:14px;opacity:.9}
-@media(max-width:1023px){.overview{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.overview{display:grid;grid-template-columns:minmax(0,auto) 1px minmax(0,auto) 1px minmax(0,1fr);gap:28px;align-items:start;background:var(--paper);border:1px solid var(--line);border-left:6px solid var(--green);border-radius:var(--r);padding:20px 28px;margin-bottom:10px;box-shadow:var(--shadow)}
+.overview .ov-item small{display:block;color:var(--muted);font-size:12px;letter-spacing:.06em;margin-bottom:6px}
+.overview .ov-item b{display:block;font-weight:600;font-size:18px;line-height:1.4;color:var(--ink)}
+.overview .ov-sep{align-self:stretch;background:var(--line)}
+.overview .goal-note{display:block;margin-top:6px;font-size:14px;color:var(--green)}
+@media(max-width:767px){.overview{grid-template-columns:1fr;gap:14px;padding:16px 18px}.overview .ov-sep{height:1px;align-self:auto}.overview .ov-item b{font-size:16px}}
 .section-head{display:flex;align-items:baseline;gap:10px;margin:26px 0 12px}
 .section-head h2{margin:0;font-size:19px}
 .section-head span{color:var(--muted);font-size:13px}
@@ -374,8 +375,11 @@ function renderMine(){
  const root=$('view-mine');root.replaceChildren();
  const p=profile;
  root.append(h('div',{class:'overview'},
-  h('div',null,h('small',{text:'Mira 的选校方向'}),h('b',{text:p.direction})),
-  h('div',null,h('small',{text:'培养目标'}),h('b',{text:p.goal}),p.goalNote?h('span',{class:'goal-note',text:p.goalNote}):null)));
+  h('div',{class:'ov-item'},h('small',{text:'选校方向'}),h('b',{text:p.direction})),
+  h('div',{class:'ov-sep'}),
+  p.careerDirection?h('div',{class:'ov-item'},h('small',{text:'职业方向'}),h('b',{text:p.careerDirection})):null,
+  p.careerDirection?h('div',{class:'ov-sep'}):null,
+  h('div',{class:'ov-item'},h('small',{text:'培养目标'}),h('b',{text:p.goal}),p.goalNote?h('span',{class:'goal-note',text:p.goalNote}):null)));
  renderMineMap(root);
  const order={priority:0,secondary:1};
  const by=st=>schools.filter(s=>st.includes(s.researchStatus)).sort((a,b)=>((order[a.researchStatus]??2)-(order[b.researchStatus]??2))||a.cnName.localeCompare(b.cnName,'zh'));
@@ -651,7 +655,7 @@ function mineBox(id){
   b.addEventListener('click',()=>{const on=markOf(id)!==k;setMark(id,{mark:on?k:''});for(const x of chips.children)x.setAttribute('aria-pressed','false');b.setAttribute('aria-pressed',String(on));status.textContent='已保存';});
   chips.append(b);
  }
- const mi=h('input',{type:'text',placeholder:'现在最想看的专业，例如 Psychology + Data，或还没想好',value:cur.majorInterest||''});
+ const mi=h('input',{type:'text',placeholder:'现在最想看的专业，例如 Economics + Data，或还没想好',value:cur.majorInterest||''});
  const note=h('textarea',{placeholder:'记录你的想法、感受或问题……'});note.value=cur.note||'';
  mi.addEventListener('input',()=>{status.textContent=setMark(id,{majorInterest:mi.value})?'已保存':'浏览器暂时无法保存';});
  note.addEventListener('input',()=>{status.textContent=setMark(id,{note:note.value})?'已保存':'浏览器暂时无法保存';});

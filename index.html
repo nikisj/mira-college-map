@@ -55,9 +55,10 @@ main{flex:1;min-height:0}
 .btn.primary{background:var(--green);color:#fff;border-color:var(--green)}
 .heart{border:0;background:transparent;font-size:19px;line-height:1;color:#cfd3cf;padding:4px}
 .heart[aria-pressed="true"]{color:#c0584f}
-.overview{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;background:var(--green);color:#fff;border-radius:var(--r);padding:20px 24px;margin-bottom:10px}
+.overview{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;background:var(--green);color:#fff;border-radius:var(--r);padding:20px 24px;margin-bottom:10px}
 .overview div small{display:block;opacity:.72;font-size:12px;margin-bottom:4px}
 .overview div b{font-weight:600;font-size:15px;line-height:1.45}
+.overview .goal-note{display:block;margin-top:6px;font-size:14px;opacity:.9}
 @media(max-width:1023px){.overview{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .section-head{display:flex;align-items:baseline;gap:10px;margin:26px 0 12px}
 .section-head h2{margin:0;font-size:19px}
@@ -335,6 +336,7 @@ function schoolTags(s,max=4){
  if(r){
   r.tags.slice(0,2).forEach(t=>out.push(h('span',{class:'tag',text:t})));
   if(r.admission)out.push(h('span',{class:'tag adm',text:'录取：'+r.admission.current}));
+  if(s.climate&&(s.climate.band===2||s.climate.band===3))out.push(h('span',{class:'tag cold',text:s.climate.band===2?'冬天很冷':'冬天冷'}));
   if(r.health&&r.health.level!=='stable')out.push(h('span',{class:'tag '+r.health.level,text:r.health.level==='watch'?'● 需要观察':'● 较大调整'}));
  }
  if(!r){const k=s.rankings||{};const t=k.usnewsNU?`U.S. News 大学 #${k.usnewsNU}`:k.usnewsLAC?`U.S. News 文理 #${k.usnewsLAC}`:k.qs?`QS #${k.qs}`:null;if(t)out.push(h('span',{class:'tag adm',text:t}));}
@@ -373,9 +375,7 @@ function renderMine(){
  const p=profile;
  root.append(h('div',{class:'overview'},
   h('div',null,h('small',{text:'Mira 的选校方向'}),h('b',{text:p.direction})),
-  h('div',null,h('small',{text:'培养目标'}),h('b',{text:p.goal})),
-  h('div',null,h('small',{text:'当前基准'}),h('b',{text:`GPA ${p.gpa} · SAT ${p.sat} · TOEFL ${p.toefl}`})),
-  h('div',null,h('small',{text:'目标'}),h('b',{text:`SAT ${p.satTarget} · TOEFL ${p.toeflTarget}`}))));
+  h('div',null,h('small',{text:'培养目标'}),h('b',{text:p.goal}),p.goalNote?h('span',{class:'goal-note',text:p.goalNote}):null)));
  renderMineMap(root);
  const order={priority:0,secondary:1};
  const by=st=>schools.filter(s=>st.includes(s.researchStatus)).sort((a,b)=>((order[a.researchStatus]??2)-(order[b.researchStatus]??2))||a.cnName.localeCompare(b.cnName,'zh'));
@@ -576,7 +576,10 @@ function renderDetailInto(container,id){
  const facts=[LABEL.inst[s.institutionType]||s.institutionType,s.undergradEnrollment?`本科${s.undergradEnrollment}${s.undergradEnrollmentYear?'（'+s.undergradEnrollmentYear+'）':''}`:null,LABEL.setting[s.campusSetting]||s.campusSetting,s.region?LABEL.region[s.region]:null,LABEL.status[s.researchStatus]].filter(Boolean);
  d.append(h('div',{class:'facts'},facts.map(f=>h('span',{text:f}))));
  const rk=[s.rankings.usnewsNU&&`U.S. News 全国大学 #${s.rankings.usnewsNU}`,s.rankings.usnewsLAC&&`U.S. News 文理学院 #${s.rankings.usnewsLAC}`,s.rankings.qs&&`QS #${s.rankings.qs}`].filter(Boolean);
- d.append(h('div',{class:'links'},s.officialUrl?h('a',{class:'btn',href:s.officialUrl,target:'_blank',rel:'noopener noreferrer',text:'官网 ↗'}):null,s.admissionsUrl?h('a',{class:'btn',href:s.admissionsUrl,target:'_blank',rel:'noopener noreferrer',text:'本科申请 ↗'}):null,compareBtn(id)));
+ d.append(h('div',{class:'links'},s.officialUrl?h('a',{class:'btn',href:s.officialUrl,target:'_blank',rel:'noopener noreferrer',text:'官网 ↗'}):null,s.admissionsUrl?h('a',{class:'btn',href:s.admissionsUrl,target:'_blank',rel:'noopener noreferrer',text:'本科申请 ↗'}):null,
+  h('a',{class:'btn',href:'https://www.youtube.com/results?search_query='+encodeURIComponent(s.name+' campus tour'),target:'_blank',rel:'noopener noreferrer',text:'校园参观视频 ↗'}),
+  h('a',{class:'btn',href:'https://www.youtube.com/results?search_query='+encodeURIComponent(s.name+' day in the life student'),target:'_blank',rel:'noopener noreferrer',text:'学生的一天 ↗'}),
+  compareBtn(id)));
  if(rk.length)d.append(h('p',{class:'hint',style:'margin:-6px 0 12px',text:'2027 榜单：'+rk.join(' · ')}));
  const head=r?(r.headline||firstSentence(r.value)):(s.howToStudy||'');
  const q=r?(r.headlineQuestion||r.miraQuestion):'';

@@ -1772,5 +1772,653 @@ const research = [
   "factSources": [
    "新加入研究池（2026-09-23），资料来自 ChatGPT 整理，待逐项核实。"
   ]
+ },
+ {
+  "id": "uc-davis",
+  "headline": "",
+  "headlineQuestion": "",
+  "value": "加州大学系统里规模很大的一所，环境、农学和社会科学都有传统；戴维斯是安静的大学城。",
+  "tradeoff": "规模大，需要自己主动找资源。加州大学不看 SAT，几所分校用同一份申请；国际生录取竞争激烈，各校的国际生录取情况还要单独核实。",
+  "miraQuestion": "我喜欢安静大学城里的大型公立大学吗？",
+  "career": "",
+  "learningPath": "",
+  "focusMajors": [],
+  "majorNote": "",
+  "flexibility": "",
+  "synthesizer": {
+   "realProblems": {
+    "text": "",
+    "evidence": "none"
+   },
+   "crossResources": {
+    "text": "",
+    "evidence": "none"
+   },
+   "methods": {
+    "text": "",
+    "evidence": "none"
+   },
+   "expression": {
+    "text": "",
+    "evidence": "none"
+   },
+   "summary": ""
+  },
+  "pathways": [],
+  "admission": null,
+  "health": null,
+  "miraLens": {
+   "start": "",
+   "pace": "",
+   "social": "",
+   "thread": ""
+  },
+  "experience": {
+   "retention": null,
+   "grad4": null,
+   "grad6": null,
+   "studentFaculty": null,
+   "fraternity": null,
+   "sorority": null,
+   "note": ""
+  },
+  "tags": [],
+  "factSources": [
+   "2026-09-23 为让名单更多元而加入\"新发现\"；录取、学校状态等待研究。"
+  ]
+ },
+ {
+  "id": "uc-irvine",
+  "headline": "",
+  "headlineQuestion": "",
+  "value": "南加州的大型公立大学，气候温和；除社会科学学院外，还有专门关注社会问题与政策的 Social Ecology 学院。",
+  "tradeoff": "规模大，需要自己主动。加州大学不看 SAT，几所分校用同一份申请；国际生录取竞争激烈，各校的国际生录取情况还要单独核实。",
+  "miraQuestion": "我能接受几万人的学校，只要气候和环境让我舒服吗？",
+  "career": "",
+  "learningPath": "",
+  "focusMajors": [],
+  "majorNote": "",
+  "flexibility": "",
+  "synthesizer": {
+   "realProblems": {
+    "text": "",
+    "evidence": "none"
+   },
+   "crossResources": {
+    "text": "",
+    "evidence": "none"
+   },
+   "methods": {
+    "text": "",
+    "evidence": "none"
+   },
+   "expression": {
+    "text": "",
+    "evidence": "none"
+   },
+   "summary": ""
+  },
+  "pathways": [],
+  "admission": null,
+  "health": null,
+  "miraLens": {
+   "start": "",
+   "pace": "",
+   "social": "",
+   "thread": ""
+  },
+  "experience": {
+   "retention": null,
+   "grad4": null,
+   "grad6": null,
+   "studentFaculty": null,
+   "fraternity": null,
+   "sorority": null,
+   "note": ""
+  },
+  "tags": [],
+  "factSources": [
+   "2026-09-23 为让名单更多元而加入\"新发现\"；录取、学校状态等待研究。"
+  ]
+ },
+ {
+  "id": "ucsb",
+  "headline": "",
+  "headlineQuestion": "",
+  "value": "海边校园，本科教育口碑好；有 Communication 专业，社科选择多。",
+  "tradeoff": "社交氛围活跃，要确认是否适合自己。加州大学不看 SAT，几所分校用同一份申请；国际生录取竞争激烈，各校的国际生录取情况还要单独核实。",
+  "miraQuestion": "我喜欢海边、轻松一些的校园生活吗？",
+  "career": "",
+  "learningPath": "",
+  "focusMajors": [],
+  "majorNote": "",
+  "flexibility": "",
+  "synthesizer": {
+   "realProblems": {
+    "text": "",
+    "evidence": "none"
+   },
+   "crossResources": {
+    "text": "",
+    "evidence": "none"
+   },
+   "methods": {
+    "text": "",
+    "evidence": "none"
+   },
+   "expression": {
+    "text": "",
+    "evidence": "none"
+   },
+   "summary": ""
+  },
+  "pathways": [],
+  "admission": null,
+  "health": null,
+  "miraLens": {
+   "start": "",
+   "pace": "",
+   "social": "",
+   "thread": ""
+  },
+  "experience": {
+   "retention": null,
+   "grad4": null,
+   "grad6": null,
+   "studentFaculty": null,
+   "fraternity": null,
+   "sorority": null,
+   "note": ""
+  },
+  "tags": [],
+  "factSources": [
+   "2026-09-23 为让名单更多元而加入\"新发现\"；录取、学校状态等待研究。"
+  ]
+ },
+ {
+  "id": "ucsd",
+  "headline": "",
+  "headlineQuestion": "",
+  "value": "研究实力强；本科采用住宿学院制，每个学院有自己的通识要求和生活社区。",
+  "tradeoff": "常被形容为理工气氛较重。加州大学不看 SAT，几所分校用同一份申请；国际生录取竞争激烈，各校的国际生录取情况还要单独核实。",
+  "miraQuestion": "我会不会在一个理工气氛较重的学校里找到自己的社科小圈子？",
+  "career": "",
+  "learningPath": "",
+  "focusMajors": [],
+  "majorNote": "",
+  "flexibility": "",
+  "synthesizer": {
+   "realProblems": {
+    "text": "",
+    "evidence": "none"
+   },
+   "crossResources": {
+    "text": "",
+    "evidence": "none"
+   },
+   "methods": {
+    "text": "",
+    "evidence": "none"
+   },
+   "expression": {
+    "text": "",
+    "evidence": "none"
+   },
+   "summary": ""
+  },
+  "pathways": [],
+  "admission": null,
+  "health": null,
+  "miraLens": {
+   "start": "",
+   "pace": "",
+   "social": "",
+   "thread": ""
+  },
+  "experience": {
+   "retention": null,
+   "grad4": null,
+   "grad6": null,
+   "studentFaculty": null,
+   "fraternity": null,
+   "sorority": null,
+   "note": ""
+  },
+  "tags": [],
+  "factSources": [
+   "2026-09-23 为让名单更多元而加入\"新发现\"；录取、学校状态等待研究。"
+  ]
+ },
+ {
+  "id": "uw-seattle",
+  "headline": "",
+  "headlineQuestion": "",
+  "value": "西雅图的大型公立大学，城市资源多、离科技公司近；冬天多雨，但不冷。",
+  "tradeoff": "州外和国际学生的录取与学费都更高；规模大，需要主动。",
+  "miraQuestion": "我喜欢一座多雨、但文化和机会很多的城市吗？",
+  "career": "",
+  "learningPath": "",
+  "focusMajors": [],
+  "majorNote": "",
+  "flexibility": "",
+  "synthesizer": {
+   "realProblems": {
+    "text": "",
+    "evidence": "none"
+   },
+   "crossResources": {
+    "text": "",
+    "evidence": "none"
+   },
+   "methods": {
+    "text": "",
+    "evidence": "none"
+   },
+   "expression": {
+    "text": "",
+    "evidence": "none"
+   },
+   "summary": ""
+  },
+  "pathways": [],
+  "admission": null,
+  "health": null,
+  "miraLens": {
+   "start": "",
+   "pace": "",
+   "social": "",
+   "thread": ""
+  },
+  "experience": {
+   "retention": null,
+   "grad4": null,
+   "grad6": null,
+   "studentFaculty": null,
+   "fraternity": null,
+   "sorority": null,
+   "note": ""
+  },
+  "tags": [],
+  "factSources": [
+   "2026-09-23 为让名单更多元而加入\"新发现\"；录取、学校状态等待研究。"
+  ]
+ },
+ {
+  "id": "umd",
+  "headline": "",
+  "headlineQuestion": "",
+  "value": "紧邻华盛顿特区的大型公立大学，公共政策、新闻（Merrill 学院）资源多。",
+  "tradeoff": "规模大；部分热门专业要单独准入。",
+  "miraQuestion": "我想离华盛顿的公共事务和媒体机构近一点吗？",
+  "career": "",
+  "learningPath": "",
+  "focusMajors": [],
+  "majorNote": "",
+  "flexibility": "",
+  "synthesizer": {
+   "realProblems": {
+    "text": "",
+    "evidence": "none"
+   },
+   "crossResources": {
+    "text": "",
+    "evidence": "none"
+   },
+   "methods": {
+    "text": "",
+    "evidence": "none"
+   },
+   "expression": {
+    "text": "",
+    "evidence": "none"
+   },
+   "summary": ""
+  },
+  "pathways": [],
+  "admission": null,
+  "health": null,
+  "miraLens": {
+   "start": "",
+   "pace": "",
+   "social": "",
+   "thread": ""
+  },
+  "experience": {
+   "retention": null,
+   "grad4": null,
+   "grad6": null,
+   "studentFaculty": null,
+   "fraternity": null,
+   "sorority": null,
+   "note": ""
+  },
+  "tags": [],
+  "factSources": [
+   "2026-09-23 为让名单更多元而加入\"新发现\"；录取、学校状态等待研究。"
+  ]
+ },
+ {
+  "id": "rutgers",
+  "headline": "",
+  "headlineQuestion": "",
+  "value": "新泽西的旗舰公立大学，离纽约市约一小时，学科齐全。",
+  "tradeoff": "规模很大，新布朗斯维克的校区分散，日常要坐校车往返。",
+  "miraQuestion": "我能适应在几个校区之间来回的大学生活吗？",
+  "career": "",
+  "learningPath": "",
+  "focusMajors": [],
+  "majorNote": "",
+  "flexibility": "",
+  "synthesizer": {
+   "realProblems": {
+    "text": "",
+    "evidence": "none"
+   },
+   "crossResources": {
+    "text": "",
+    "evidence": "none"
+   },
+   "methods": {
+    "text": "",
+    "evidence": "none"
+   },
+   "expression": {
+    "text": "",
+    "evidence": "none"
+   },
+   "summary": ""
+  },
+  "pathways": [],
+  "admission": null,
+  "health": null,
+  "miraLens": {
+   "start": "",
+   "pace": "",
+   "social": "",
+   "thread": ""
+  },
+  "experience": {
+   "retention": null,
+   "grad4": null,
+   "grad6": null,
+   "studentFaculty": null,
+   "fraternity": null,
+   "sorority": null,
+   "note": ""
+  },
+  "tags": [],
+  "factSources": [
+   "2026-09-23 为让名单更多元而加入\"新发现\"；录取、学校状态等待研究。"
+  ]
+ },
+ {
+  "id": "ohio-state",
+  "headline": "",
+  "headlineQuestion": "",
+  "value": "美国规模最大的大学之一，学科和资源都非常多；哥伦布是中等城市。",
+  "tradeoff": "规模非常大，冬天冷；需要很强的主动性。",
+  "miraQuestion": "在一所超大型大学里，我会觉得机会很多，还是会有点迷失？",
+  "career": "",
+  "learningPath": "",
+  "focusMajors": [],
+  "majorNote": "",
+  "flexibility": "",
+  "synthesizer": {
+   "realProblems": {
+    "text": "",
+    "evidence": "none"
+   },
+   "crossResources": {
+    "text": "",
+    "evidence": "none"
+   },
+   "methods": {
+    "text": "",
+    "evidence": "none"
+   },
+   "expression": {
+    "text": "",
+    "evidence": "none"
+   },
+   "summary": ""
+  },
+  "pathways": [],
+  "admission": null,
+  "health": null,
+  "miraLens": {
+   "start": "",
+   "pace": "",
+   "social": "",
+   "thread": ""
+  },
+  "experience": {
+   "retention": null,
+   "grad4": null,
+   "grad6": null,
+   "studentFaculty": null,
+   "fraternity": null,
+   "sorority": null,
+   "note": ""
+  },
+  "tags": [],
+  "factSources": [
+   "2026-09-23 为让名单更多元而加入\"新发现\"；录取、学校状态等待研究。"
+  ]
+ },
+ {
+  "id": "bu",
+  "headline": "",
+  "headlineQuestion": "",
+  "value": "波士顿市区的大型私立大学，传播学院（COM）很有名，城市实习机会多。",
+  "tradeoff": "校园沿城市街道展开，没有传统的封闭校园感；冬天冷。",
+  "miraQuestion": "我喜欢城市就是校园的一部分吗？",
+  "career": "",
+  "learningPath": "",
+  "focusMajors": [],
+  "majorNote": "",
+  "flexibility": "",
+  "synthesizer": {
+   "realProblems": {
+    "text": "",
+    "evidence": "none"
+   },
+   "crossResources": {
+    "text": "",
+    "evidence": "none"
+   },
+   "methods": {
+    "text": "",
+    "evidence": "none"
+   },
+   "expression": {
+    "text": "",
+    "evidence": "none"
+   },
+   "summary": ""
+  },
+  "pathways": [],
+  "admission": null,
+  "health": null,
+  "miraLens": {
+   "start": "",
+   "pace": "",
+   "social": "",
+   "thread": ""
+  },
+  "experience": {
+   "retention": null,
+   "grad4": null,
+   "grad6": null,
+   "studentFaculty": null,
+   "fraternity": null,
+   "sorority": null,
+   "note": ""
+  },
+  "tags": [],
+  "factSources": [
+   "2026-09-23 为让名单更多元而加入\"新发现\"；录取、学校状态等待研究。"
+  ]
+ },
+ {
+  "id": "northeastern",
+  "headline": "",
+  "headlineQuestion": "",
+  "value": "以 co-op 著称：读书期间可以交替参加几个月的全职工作，把课堂和真实工作连起来。",
+  "tradeoff": "录取竞争非常激烈；国际生参加 co-op 要符合工作许可规定。",
+  "miraQuestion": "我想在本科期间就进入真实的工作场景吗？",
+  "career": "",
+  "learningPath": "",
+  "focusMajors": [],
+  "majorNote": "",
+  "flexibility": "",
+  "synthesizer": {
+   "realProblems": {
+    "text": "",
+    "evidence": "none"
+   },
+   "crossResources": {
+    "text": "",
+    "evidence": "none"
+   },
+   "methods": {
+    "text": "",
+    "evidence": "none"
+   },
+   "expression": {
+    "text": "",
+    "evidence": "none"
+   },
+   "summary": ""
+  },
+  "pathways": [],
+  "admission": null,
+  "health": null,
+  "miraLens": {
+   "start": "",
+   "pace": "",
+   "social": "",
+   "thread": ""
+  },
+  "experience": {
+   "retention": null,
+   "grad4": null,
+   "grad6": null,
+   "studentFaculty": null,
+   "fraternity": null,
+   "sorority": null,
+   "note": ""
+  },
+  "tags": [],
+  "factSources": [
+   "2026-09-23 为让名单更多元而加入\"新发现\"；录取、学校状态等待研究。"
+  ]
+ },
+ {
+  "id": "emory",
+  "headline": "",
+  "headlineQuestion": "",
+  "value": "亚特兰大的私立研究型大学，冬天温和；本科社科和商科都强，还有牛津学院（Oxford College）两年制入口。",
+  "tradeoff": "录取竞争非常激烈。",
+  "miraQuestion": "我更想要一个安静的小校区起步，还是直接在大校园里开始？",
+  "career": "",
+  "learningPath": "",
+  "focusMajors": [],
+  "majorNote": "",
+  "flexibility": "",
+  "synthesizer": {
+   "realProblems": {
+    "text": "",
+    "evidence": "none"
+   },
+   "crossResources": {
+    "text": "",
+    "evidence": "none"
+   },
+   "methods": {
+    "text": "",
+    "evidence": "none"
+   },
+   "expression": {
+    "text": "",
+    "evidence": "none"
+   },
+   "summary": ""
+  },
+  "pathways": [],
+  "admission": null,
+  "health": null,
+  "miraLens": {
+   "start": "",
+   "pace": "",
+   "social": "",
+   "thread": ""
+  },
+  "experience": {
+   "retention": null,
+   "grad4": null,
+   "grad6": null,
+   "studentFaculty": null,
+   "fraternity": null,
+   "sorority": null,
+   "note": ""
+  },
+  "tags": [],
+  "factSources": [
+   "2026-09-23 为让名单更多元而加入\"新发现\"；录取、学校状态等待研究。"
+  ]
+ },
+ {
+  "id": "nyu",
+  "headline": "",
+  "headlineQuestion": "",
+  "value": "纽约市中心，城市就是校园；专业很多，包括新闻、全球公共政策等。",
+  "tradeoff": "没有传统校园，社交要自己建立；录取竞争激烈，花费高。",
+  "miraQuestion": "我能在一座大城市里独立建立自己的生活和朋友圈吗？",
+  "career": "",
+  "learningPath": "",
+  "focusMajors": [],
+  "majorNote": "",
+  "flexibility": "",
+  "synthesizer": {
+   "realProblems": {
+    "text": "",
+    "evidence": "none"
+   },
+   "crossResources": {
+    "text": "",
+    "evidence": "none"
+   },
+   "methods": {
+    "text": "",
+    "evidence": "none"
+   },
+   "expression": {
+    "text": "",
+    "evidence": "none"
+   },
+   "summary": ""
+  },
+  "pathways": [],
+  "admission": null,
+  "health": null,
+  "miraLens": {
+   "start": "",
+   "pace": "",
+   "social": "",
+   "thread": ""
+  },
+  "experience": {
+   "retention": null,
+   "grad4": null,
+   "grad6": null,
+   "studentFaculty": null,
+   "fraternity": null,
+   "sorority": null,
+   "note": ""
+  },
+  "tags": [],
+  "factSources": [
+   "2026-09-23 为让名单更多元而加入\"新发现\"；录取、学校状态等待研究。"
+  ]
  }
 ];

@@ -765,7 +765,7 @@ const schools = [
    "qs": null
   },
   "climate": {
-   "coldMonthMeanC": 1.0,
+   "coldMonthMeanC": 1,
    "band": 4,
    "outOfScope": false,
    "note": "",
@@ -802,7 +802,7 @@ const schools = [
    "qs": null
   },
   "climate": {
-   "coldMonthMeanC": 4.0,
+   "coldMonthMeanC": 4,
    "band": 4,
    "outOfScope": false,
    "note": "",
@@ -839,7 +839,7 @@ const schools = [
    "qs": null
   },
   "climate": {
-   "coldMonthMeanC": -1.0,
+   "coldMonthMeanC": -1,
    "band": 3,
    "outOfScope": false,
    "note": "",
@@ -1024,7 +1024,7 @@ const schools = [
    "qs": 16
   },
   "climate": {
-   "coldMonthMeanC": -1.0,
+   "coldMonthMeanC": -1,
    "band": 3,
    "outOfScope": false,
    "note": "",
@@ -1061,7 +1061,7 @@ const schools = [
    "qs": 7
   },
   "climate": {
-   "coldMonthMeanC": 13.0,
+   "coldMonthMeanC": 13,
    "band": 5,
    "outOfScope": false,
    "note": "",
@@ -1098,7 +1098,7 @@ const schools = [
    "qs": 2
   },
   "climate": {
-   "coldMonthMeanC": 10.0,
+   "coldMonthMeanC": 10,
    "band": 5,
    "outOfScope": false,
    "note": "",
@@ -1135,7 +1135,7 @@ const schools = [
    "qs": 15
   },
   "climate": {
-   "coldMonthMeanC": 1.0,
+   "coldMonthMeanC": 1,
    "band": 4,
    "outOfScope": false,
    "note": "",
@@ -1320,7 +1320,7 @@ const schools = [
    "qs": 43
   },
   "climate": {
-   "coldMonthMeanC": 1.0,
+   "coldMonthMeanC": 1,
    "band": 4,
    "outOfScope": false,
    "note": "",
@@ -1357,7 +1357,7 @@ const schools = [
    "qs": null
   },
   "climate": {
-   "coldMonthMeanC": -7.0,
+   "coldMonthMeanC": -7,
    "band": 1,
    "outOfScope": true,
    "note": "",
@@ -1394,7 +1394,7 @@ const schools = [
    "qs": null
   },
   "climate": {
-   "coldMonthMeanC": -2.0,
+   "coldMonthMeanC": -2,
    "band": 3,
    "outOfScope": false,
    "note": "",
@@ -1431,7 +1431,7 @@ const schools = [
    "qs": 16
   },
   "climate": {
-   "coldMonthMeanC": -5.0,
+   "coldMonthMeanC": -5,
    "band": 2,
    "outOfScope": false,
    "note": "",
@@ -1542,7 +1542,7 @@ const schools = [
    "qs": null
   },
   "climate": {
-   "coldMonthMeanC": 4.0,
+   "coldMonthMeanC": 4,
    "band": 4,
    "outOfScope": false,
    "note": "",
@@ -1616,7 +1616,7 @@ const schools = [
    "qs": 20
   },
   "climate": {
-   "coldMonthMeanC": 10.0,
+   "coldMonthMeanC": 10,
    "band": 5,
    "outOfScope": false,
    "note": "",
@@ -1653,7 +1653,7 @@ const schools = [
    "qs": 49
   },
   "climate": {
-   "coldMonthMeanC": 14.0,
+   "coldMonthMeanC": 14,
    "band": 5,
    "outOfScope": false,
    "note": "",
@@ -1690,7 +1690,7 @@ const schools = [
    "qs": null
   },
   "climate": {
-   "coldMonthMeanC": -4.0,
+   "coldMonthMeanC": -4,
    "band": 2,
    "outOfScope": false,
    "note": "",
@@ -1727,7 +1727,7 @@ const schools = [
    "qs": null
   },
   "climate": {
-   "coldMonthMeanC": 7.0,
+   "coldMonthMeanC": 7,
    "band": 5,
    "outOfScope": false,
    "note": "",
@@ -1740,7 +1740,7 @@ const schools = [
   "admissionsUrl": "",
   "heroImage": null,
   "heroImageCredit": null,
-  "researchStatus": "none"
+  "researchStatus": "new"
  },
  {
   "id": "georgetown",
@@ -1801,7 +1801,7 @@ const schools = [
    "qs": null
   },
   "climate": {
-   "coldMonthMeanC": -4.0,
+   "coldMonthMeanC": -4,
    "band": 2,
    "outOfScope": false,
    "note": "",
@@ -1912,7 +1912,7 @@ const schools = [
    "qs": null
   },
   "climate": {
-   "coldMonthMeanC": 14.0,
+   "coldMonthMeanC": 14,
    "band": 5,
    "outOfScope": false,
    "note": "",
@@ -1949,7 +1949,7 @@ const schools = [
    "qs": null
   },
   "climate": {
-   "coldMonthMeanC": 7.0,
+   "coldMonthMeanC": 7,
    "band": 5,
    "outOfScope": false,
    "note": "",
@@ -1986,7 +1986,7 @@ const schools = [
    "qs": null
   },
   "climate": {
-   "coldMonthMeanC": 14.0,
+   "coldMonthMeanC": 14,
    "band": 5,
    "outOfScope": false,
    "note": "",
@@ -1999,7 +1999,7 @@ const schools = [
   "admissionsUrl": "",
   "heroImage": null,
   "heroImageCredit": null,
-  "researchStatus": "none"
+  "researchStatus": "new"
  },
  {
   "id": "boston-college",
@@ -2060,7 +2060,7 @@ const schools = [
    "qs": null
   },
   "climate": {
-   "coldMonthMeanC": 1.0,
+   "coldMonthMeanC": 1,
    "band": 4,
    "outOfScope": false,
    "note": "",
@@ -2073,7 +2073,7 @@ const schools = [
   "admissionsUrl": "",
   "heroImage": null,
   "heroImageCredit": null,
-  "researchStatus": "none"
+  "researchStatus": "new"
  },
  {
   "id": "tufts",
@@ -2147,7 +2147,7 @@ const schools = [
   "admissionsUrl": "",
   "heroImage": null,
   "heroImageCredit": null,
-  "researchStatus": "none"
+  "researchStatus": "new"
  },
  {
   "id": "uc-davis",
@@ -2171,7 +2171,7 @@ const schools = [
    "qs": null
   },
   "climate": {
-   "coldMonthMeanC": 8.0,
+   "coldMonthMeanC": 8,
    "band": 5,
    "outOfScope": false,
    "note": "",
@@ -2184,7 +2184,7 @@ const schools = [
   "admissionsUrl": "",
   "heroImage": null,
   "heroImageCredit": null,
-  "researchStatus": "none"
+  "researchStatus": "new"
  },
  {
   "id": "uc-irvine",
@@ -2221,7 +2221,7 @@ const schools = [
   "admissionsUrl": "",
   "heroImage": null,
   "heroImageCredit": null,
-  "researchStatus": "none"
+  "researchStatus": "new"
  },
  {
   "id": "uf",
@@ -2319,7 +2319,7 @@ const schools = [
    "qs": null
   },
   "climate": {
-   "coldMonthMeanC": 11.0,
+   "coldMonthMeanC": 11,
    "band": 5,
    "outOfScope": false,
    "note": "",
@@ -2369,7 +2369,7 @@ const schools = [
   "admissionsUrl": "",
   "heroImage": null,
   "heroImageCredit": null,
-  "researchStatus": "none"
+  "researchStatus": "new"
  },
  {
   "id": "villanova",
@@ -2430,7 +2430,7 @@ const schools = [
    "qs": null
   },
   "climate": {
-   "coldMonthMeanC": -2.0,
+   "coldMonthMeanC": -2,
    "band": 3,
    "outOfScope": false,
    "note": "",
@@ -2467,7 +2467,7 @@ const schools = [
    "qs": null
   },
   "climate": {
-   "coldMonthMeanC": -1.0,
+   "coldMonthMeanC": -1,
    "band": 3,
    "outOfScope": false,
    "note": "",
@@ -2480,7 +2480,7 @@ const schools = [
   "admissionsUrl": "",
   "heroImage": null,
   "heroImageCredit": null,
-  "researchStatus": "none"
+  "researchStatus": "new"
  },
  {
   "id": "rutgers",
@@ -2517,7 +2517,7 @@ const schools = [
   "admissionsUrl": "",
   "heroImage": null,
   "heroImageCredit": null,
-  "researchStatus": "none"
+  "researchStatus": "new"
  },
  {
   "id": "ucsb",
@@ -2554,7 +2554,7 @@ const schools = [
   "admissionsUrl": "",
   "heroImage": null,
   "heroImageCredit": null,
-  "researchStatus": "none"
+  "researchStatus": "new"
  },
  {
   "id": "umd",
@@ -2591,7 +2591,7 @@ const schools = [
   "admissionsUrl": "",
   "heroImage": null,
   "heroImageCredit": null,
-  "researchStatus": "none"
+  "researchStatus": "new"
  },
  {
   "id": "uw-seattle",
@@ -2628,7 +2628,7 @@ const schools = [
   "admissionsUrl": "",
   "heroImage": null,
   "heroImageCredit": null,
-  "researchStatus": "none"
+  "researchStatus": "new"
  },
  {
   "id": "williams",
@@ -2652,7 +2652,7 @@ const schools = [
    "qs": null
   },
   "climate": {
-   "coldMonthMeanC": -5.0,
+   "coldMonthMeanC": -5,
    "band": 2,
    "outOfScope": false,
    "note": "",
@@ -2726,7 +2726,7 @@ const schools = [
    "qs": null
   },
   "climate": {
-   "coldMonthMeanC": -5.0,
+   "coldMonthMeanC": -5,
    "band": 2,
    "outOfScope": false,
    "note": "",
@@ -2911,7 +2911,7 @@ const schools = [
    "qs": null
   },
   "climate": {
-   "coldMonthMeanC": -3.0,
+   "coldMonthMeanC": -3,
    "band": 3,
    "outOfScope": false,
    "note": "",
@@ -2985,7 +2985,7 @@ const schools = [
    "qs": null
   },
   "climate": {
-   "coldMonthMeanC": -6.0,
+   "coldMonthMeanC": -6,
    "band": 1,
    "outOfScope": true,
    "note": "",
@@ -3022,7 +3022,7 @@ const schools = [
    "qs": null
   },
   "climate": {
-   "coldMonthMeanC": -2.0,
+   "coldMonthMeanC": -2,
    "band": 3,
    "outOfScope": false,
    "note": "",
@@ -3059,7 +3059,7 @@ const schools = [
    "qs": null
   },
   "climate": {
-   "coldMonthMeanC": -10.0,
+   "coldMonthMeanC": -10,
    "band": 1,
    "outOfScope": true,
    "note": "",
@@ -3133,7 +3133,7 @@ const schools = [
    "qs": null
   },
   "climate": {
-   "coldMonthMeanC": -6.0,
+   "coldMonthMeanC": -6,
    "band": 1,
    "outOfScope": true,
    "note": "",
@@ -3170,7 +3170,7 @@ const schools = [
    "qs": null
   },
   "climate": {
-   "coldMonthMeanC": -7.0,
+   "coldMonthMeanC": -7,
    "band": 1,
    "outOfScope": true,
    "note": "",
@@ -3207,7 +3207,7 @@ const schools = [
    "qs": null
   },
   "climate": {
-   "coldMonthMeanC": -8.0,
+   "coldMonthMeanC": -8,
    "band": 1,
    "outOfScope": true,
    "note": "",
@@ -3281,7 +3281,7 @@ const schools = [
    "qs": null
   },
   "climate": {
-   "coldMonthMeanC": -4.0,
+   "coldMonthMeanC": -4,
    "band": 2,
    "outOfScope": false,
    "note": "",
@@ -3318,7 +3318,7 @@ const schools = [
    "qs": null
   },
   "climate": {
-   "coldMonthMeanC": -7.0,
+   "coldMonthMeanC": -7,
    "band": 1,
    "outOfScope": true,
    "note": "",
@@ -3503,7 +3503,7 @@ const schools = [
    "qs": 4
   },
   "climate": {
-   "coldMonthMeanC": 5.0,
+   "coldMonthMeanC": 5,
    "band": 4,
    "outOfScope": false,
    "note": "",
@@ -3688,7 +3688,7 @@ const schools = [
    "qs": 11
   },
   "climate": {
-   "coldMonthMeanC": 16.0,
+   "coldMonthMeanC": 16,
    "band": 5,
    "outOfScope": false,
    "note": "",
@@ -3762,7 +3762,7 @@ const schools = [
    "qs": 13
   },
   "climate": {
-   "coldMonthMeanC": -3.0,
+   "coldMonthMeanC": -3,
    "band": 2,
    "outOfScope": false,
    "note": "",
@@ -3785,7 +3785,7 @@ const schools = [
   "city": "Beijing",
   "state": "",
   "region": null,
-  "lat": 40.0,
+  "lat": 40,
   "lng": 116.3264,
   "kind": "university",
   "institutionType": "Public University",
@@ -3799,7 +3799,7 @@ const schools = [
    "qs": 14
   },
   "climate": {
-   "coldMonthMeanC": -3.0,
+   "coldMonthMeanC": -3,
    "band": 2,
    "outOfScope": false,
    "note": "",
@@ -3836,7 +3836,7 @@ const schools = [
    "qs": 18
   },
   "climate": {
-   "coldMonthMeanC": 16.0,
+   "coldMonthMeanC": 16,
    "band": 5,
    "outOfScope": false,
    "note": "",
@@ -3873,7 +3873,7 @@ const schools = [
    "qs": 19
   },
   "climate": {
-   "coldMonthMeanC": 13.0,
+   "coldMonthMeanC": 13,
    "band": 5,
    "outOfScope": false,
    "note": "",
@@ -3947,7 +3947,7 @@ const schools = [
    "qs": 22
   },
   "climate": {
-   "coldMonthMeanC": 10.0,
+   "coldMonthMeanC": 10,
    "band": 5,
    "outOfScope": false,
    "note": "",
@@ -3984,7 +3984,7 @@ const schools = [
    "qs": 25
   },
   "climate": {
-   "coldMonthMeanC": 0.0,
+   "coldMonthMeanC": 0,
    "band": 3,
    "outOfScope": false,
    "note": "",
@@ -4058,7 +4058,7 @@ const schools = [
    "qs": 28
   },
   "climate": {
-   "coldMonthMeanC": 13.0,
+   "coldMonthMeanC": 13,
    "band": 5,
    "outOfScope": false,
    "note": "",
@@ -4095,7 +4095,7 @@ const schools = [
    "qs": 29
   },
   "climate": {
-   "coldMonthMeanC": 6.0,
+   "coldMonthMeanC": 6,
    "band": 5,
    "outOfScope": false,
    "note": "",
@@ -4169,7 +4169,7 @@ const schools = [
    "qs": 31
   },
   "climate": {
-   "coldMonthMeanC": 10.0,
+   "coldMonthMeanC": 10,
    "band": 5,
    "outOfScope": false,
    "note": "",
@@ -4243,7 +4243,7 @@ const schools = [
    "qs": 33
   },
   "climate": {
-   "coldMonthMeanC": 16.0,
+   "coldMonthMeanC": 16,
    "band": 5,
    "outOfScope": false,
    "note": "",
@@ -4280,7 +4280,7 @@ const schools = [
    "qs": 34
   },
   "climate": {
-   "coldMonthMeanC": 5.0,
+   "coldMonthMeanC": 5,
    "band": 4,
    "outOfScope": false,
    "note": "",
@@ -4317,7 +4317,7 @@ const schools = [
    "qs": 35
   },
   "climate": {
-   "coldMonthMeanC": 4.0,
+   "coldMonthMeanC": 4,
    "band": 4,
    "outOfScope": false,
    "note": "",
@@ -4428,7 +4428,7 @@ const schools = [
    "qs": 38
   },
   "climate": {
-   "coldMonthMeanC": -2.0,
+   "coldMonthMeanC": -2,
    "band": 3,
    "outOfScope": false,
    "note": "",
@@ -4576,7 +4576,7 @@ const schools = [
    "qs": 42
   },
   "climate": {
-   "coldMonthMeanC": -2.0,
+   "coldMonthMeanC": -2,
    "band": 3,
    "outOfScope": false,
    "note": "",
@@ -4650,7 +4650,7 @@ const schools = [
    "qs": 45
   },
   "climate": {
-   "coldMonthMeanC": 4.0,
+   "coldMonthMeanC": 4,
    "band": 4,
    "outOfScope": false,
    "note": "",
@@ -4687,7 +4687,7 @@ const schools = [
    "qs": 47
   },
   "climate": {
-   "coldMonthMeanC": 5.0,
+   "coldMonthMeanC": 5,
    "band": 4,
    "outOfScope": false,
    "note": "",
@@ -4724,7 +4724,7 @@ const schools = [
    "qs": 48
   },
   "climate": {
-   "coldMonthMeanC": 4.0,
+   "coldMonthMeanC": 4,
    "band": 4,
    "outOfScope": false,
    "note": "",
@@ -4761,7 +4761,7 @@ const schools = [
    "qs": 50
   },
   "climate": {
-   "coldMonthMeanC": 16.0,
+   "coldMonthMeanC": 16,
    "band": 5,
    "outOfScope": false,
    "note": "",
